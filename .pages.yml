@@ -300,7 +300,9 @@ content:
         fields:
           - { name: title, label: Job title, type: string }
           - { name: org, label: Company, type: string }
-          - { name: period, label: "Dates (e.g. Jul 2021 – Feb 2023)", type: string }
+          - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
+          - { name: end, label: End date, type: date }
+          - { name: current, label: "I still work here (shows “Present” instead of the end date)", type: boolean, default: false }
           - { name: location, label: Location, type: string }
           - { name: points, label: Bullet points, type: string, list: true }
           - { name: tags, label: Tools, type: string, list: true }
@@ -333,7 +335,9 @@ content:
         fields:
           - { name: title, label: Qualification, type: string }
           - { name: org, label: Institution, type: string }
-          - { name: period, label: Dates, type: string }
+          - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
+          - { name: end, label: End date, type: date }
+          - { name: current, label: "Still studying here (shows “Present” instead of the end date)", type: boolean, default: false }
           - { name: grade, label: Grade, type: string }
           - { name: text, label: Description, type: text }
           - { name: points, label: Highlights, type: string, list: true }
