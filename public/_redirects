@@ -1,0 +1,19 @@
+# Old site URLs → new pages (keeps links on your CV, LinkedIn and Behance working)
+/pages/homepage      /                          301
+/pages/about         /about/                    301
+/pages/skills        /skills/                   301
+/pages/experience    /experience/               301
+/pages/education     /education/                301
+/pages/portfolio     /portfolio/                301
+/pages/contact       /contact/                  301
+/pages/case-study_01 /work/cyberbid/            301
+/pages/case-study_02 /work/tripora/             301
+/pages/case-study_03 /work/hmi-interface/       301
+/pages/case-study_04 /work/profile-website/     301
+/pages/3d_gallery_01 /work/fire-hydrant/        301
+/pages/3d_gallery_02 /work/quad-bike/           301
+/pages/3d_gallery_03 /work/excavator/           301
+/pages/3d_gallery_04 /work/belrex/              301
+/pages/3d_gallery_05 /work/viking-shield/       301
+/pages/3d_gallery_06 /work/computer-station/    301
+/pages/2d_gallery_01 /work/graphic-design/      301

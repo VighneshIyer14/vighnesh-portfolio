@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Static site on Cloudflare Workers. Cloudflare builds with `npm run build`
+  // and serves the ./dist folder. public/_redirects keeps old /pages/... links working.
+  "name": "vighnesh-portfolio",
+  "compatibility_date": "2026-09-20",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

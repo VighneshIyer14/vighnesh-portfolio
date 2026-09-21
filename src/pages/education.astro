@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTA from '../components/CTA.astro';
+import edu from '../data/education.json';
+---
+<Base title="Education" description={edu.intro}>
+  <PageHero label="Education" title={edu.title} intro={edu.intro} />
+
+  <section class="section container" aria-labelledby="edt">
+    <SectionHeader n="01" id="edt">Learning <em>timeline</em></SectionHeader>
+    <ol class="timeline">
+      {edu.items.map((e) => (
+        <li>
+          <div class="tl__meta">
+            <span class="vi-label"><b>{e.period}</b></span>
+            {e.grade && <span class="vi-tag vi-tag--status">{e.grade}</span>}
+          </div>
+          <h3 class="tl__title">{e.title}</h3>
+          <p class="tl__org">{e.org}</p>
+          <p style="max-width: 680px; margin: var(--space-3) 0 0; color: var(--ink-muted)">{e.text}</p>
+          <ul class="tl__list">{e.points.map((p) => <li>{p}</li>)}</ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <CTA title="Trained in craft, focused on *users*." text="See how that education shows up in real projects." primary={['View my work', '/portfolio/']} secondary={['Get in touch', '/contact/']} />
+</Base>

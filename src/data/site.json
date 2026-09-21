@@ -1,0 +1,76 @@
+{
+  "name": "Vighnesh Iyer",
+  "role": "UI/UX & Product Designer",
+  "location": "Bangalore, India",
+  "openToWork": true,
+  "headline": "Where cinematic vision meets *user experience*.",
+  "intro": "I'm Vighnesh — a product designer who spent 3.5+ years building worlds for Hollywood films before moving into UI/UX. I bring that dimensional, detail-obsessed way of seeing to B2B, SaaS and fintech products.",
+  "cv": "",
+  "email": "vigiyer1493@gmail.com",
+  "phone": "+91 95917 70958",
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vighneshiyer14/"
+    },
+    {
+      "label": "Behance",
+      "url": "https://www.behance.net/vigiyer149509a"
+    },
+    {
+      "label": "ArtStation",
+      "url": "https://www.artstation.com/vigiyer"
+    }
+  ],
+  "whatsapp": "919591770958",
+  "tagline": "Where cinematic vision meets user experience. Bringing 3D visualisation expertise to UI/UX design.",
+  "stats": [
+    {
+      "value": "3+",
+      "label": "Years in production"
+    },
+    {
+      "value": "3",
+      "label": "Hollywood films"
+    },
+    {
+      "value": "4.0",
+      "label": "CGPA · IIIT-B"
+    },
+    {
+      "value": "10+",
+      "label": "Projects"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "UI/UX Design",
+      "text": "Research-led interfaces, design systems and prototypes for web and mobile.",
+      "tools": [
+        "Figma",
+        "Adobe XD",
+        "Prototyping"
+      ]
+    },
+    {
+      "title": "3D Modeling & VFX",
+      "text": "Hard-surface and prop modelling for feature films at MPC.",
+      "tools": [
+        "Maya",
+        "Nuke",
+        "Substance Painter"
+      ]
+    },
+    {
+      "title": "Graphic Design",
+      "text": "Brand, print and motion work for products and campaigns.",
+      "tools": [
+        "Photoshop",
+        "Illustrator",
+        "After Effects",
+        "CorelDRAW"
+      ]
+    }
+  ],
+  "formKey": ""
+}

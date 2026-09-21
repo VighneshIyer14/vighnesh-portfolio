@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { project: CollectionEntry<'projects'>; index: number; featured?: boolean }
+const { project, index, featured = false } = Astro.props;
+const d = project.data;
+const n = String(index + 1).padStart(2, '0');
+const meta = [d.discipline, d.category].filter(Boolean).join(' · ');
+---
+<a class:list={['vi-card', { 'vi-card--featured': featured }]} href={`/work/${project.id}/`} data-cat={d.discipline}>
+  <div class="vi-card__media">
+    <img src={d.cover} alt="" loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />
+  </div>
+  <div class="vi-card__body">
+    <span class="vi-label"><b>{n}</b> / {meta}</span>
+    <h3 class="vi-card__title">{d.title}</h3>
+    <p class="vi-card__summary">{d.summary}</p>
+    {d.tags.length > 0 && (
+      <div class="vi-card__tags">{d.tags.slice(0, 3).map((t) => <span class="vi-tag">{t}</span>)}</div>
+    )}
+  </div>
+</a>
+<style>
+  .vi-card { display: block; color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface-raised); overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+  .vi-card:hover { color: inherit; border-color: transparent; box-shadow: var(--glow-cyan); }
+  .vi-card__media { aspect-ratio: 16 / 10; background: var(--surface-sunken); overflow: hidden; }
+  .vi-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+  .vi-card:hover .vi-card__media img { transform: scale(1.02); }
+  .vi-card__body { padding: var(--space-6); display: grid; gap: var(--space-2); }
+  .vi-card__title { margin: 0; font: 600 22px/30px var(--font-display); letter-spacing: -.02em; color: var(--ink); transition: color .2s; }
+  .vi-card:hover .vi-card__title { color: var(--accent-text); }
+  .vi-card__summary { margin: 0; font-size: 14px; line-height: 22px; color: var(--ink-muted); }
+  .vi-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+  .vi-card--featured { border-color: transparent; box-shadow: var(--glow-accent); }
+  .vi-card--featured:hover { box-shadow: var(--glow-accent), 0 0 48px rgba(176, 38, 255, .3); }
+  .vi-card--featured .vi-card__media { background: var(--violet-deep); background-image: linear-gradient(rgba(176, 38, 255, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(176, 38, 255, .14) 1px, transparent 1px); background-size: 32px 32px; }
+  @media (min-width: 900px) {
+    .vi-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.6fr 1fr; }
+    .vi-card--featured .vi-card__media { aspect-ratio: auto; min-height: 380px; display: grid; place-items: center; padding: var(--space-8); }
+    .vi-card--featured .vi-card__media img { height: auto; border-radius: var(--radius-md); border: 1px solid rgba(34, 230, 255, .35); }
+    .vi-card--featured .vi-card__body { align-content: end; padding: var(--space-12) var(--space-8); }
+    .vi-card--featured .vi-card__title { font-size: 44px; line-height: 1.05; letter-spacing: -.035em; }
+    .vi-card--featured .vi-card__summary { font-size: 16px; line-height: 26px; }
+  }
+</style>

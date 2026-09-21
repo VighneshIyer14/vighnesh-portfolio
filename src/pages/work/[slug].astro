@@ -1,0 +1,91 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import GridBg from '../../components/GridBg.astro';
+import { getProjects } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: projects[(i + 1) % projects.length] },
+  }));
+}
+
+const { project, next } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+const facts = [
+  { k: 'Discipline', v: d.discipline },
+  { k: 'Category', v: d.category },
+  { k: 'Year', v: d.year },
+  { k: 'Role', v: d.role },
+  { k: 'Tools', v: d.tools.join(', ') },
+].filter((f) => f.v);
+---
+<Base title={d.title} description={d.summary} image={d.cover}>
+  <article>
+    <header class="container head">
+      <GridBg />
+      <a class="vi-btn vi-btn--ghost back" href="/portfolio/">← Portfolio</a>
+      <h1 class="display-lg">{d.title}</h1>
+      <p class="body-lg lead">{d.summary}</p>
+      <dl class="facts">
+        {facts.map((f) => <div><dt class="vi-label">{f.k}</dt><dd>{f.v}</dd></div>)}
+      </dl>
+      {d.link && <a class="vi-btn vi-btn--secondary" href={d.link} target="_blank" rel="noopener">View live / prototype ↗</a>}
+    </header>
+
+    <div class="container"><img class="cover" src={d.cover} alt={`${d.title} — cover`} /></div>
+
+    <div class="container"><div class="prose"><Content /></div></div>
+
+    {d.gallery.length > 0 && (
+      <div class="container gallery">
+        {d.gallery.map((g) => (
+          <figure>
+            <img src={g.image} alt={g.caption || d.title} loading="lazy" decoding="async" />
+            {g.caption && <figcaption class="vi-label">{g.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
+
+    {next && next.id !== project.id && (
+      <nav class="container nextp" aria-label="Next project">
+        <a href={`/work/${next.id}/`}>
+          <span class="vi-label"><b>&gt;</b> Next project</span>
+          <span class="display-md">{next.data.title} →</span>
+        </a>
+      </nav>
+    )}
+  </article>
+</Base>
+
+<style>
+  .head { position: relative; isolation: isolate; padding-top: var(--space-16); }
+  .back { margin-bottom: var(--space-8); }
+  .lead { max-width: var(--prose-max); margin: var(--space-6) 0 var(--space-8); }
+  .facts { display: flex; flex-wrap: wrap; gap: var(--space-6) var(--space-12); margin: 0 0 var(--space-8); padding: var(--space-6) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .facts dd { margin: var(--space-1) 0 0; }
+  .cover { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: var(--space-12) 0 var(--space-16); background: var(--surface-sunken); }
+
+  .prose { max-width: var(--prose-max); margin: 0 auto; }
+  .prose :global(h2) { font: 600 clamp(26px, 3.4vw, 34px)/1.1 var(--font-display); letter-spacing: -.03em; margin: var(--space-16) 0 var(--space-4); }
+  .prose :global(h3) { font: 600 22px/30px var(--font-display); letter-spacing: -.02em; margin: var(--space-12) 0 var(--space-2); }
+  .prose :global(p), .prose :global(li) { color: var(--ink-muted); }
+  .prose :global(strong) { color: var(--ink); font-weight: 500; }
+  .prose :global(img) { margin: var(--space-12) 0; border-radius: var(--radius-md); border: 1px solid var(--line); }
+  .prose :global(blockquote) { margin: var(--space-12) 0; padding-left: var(--space-6); border-left: 2px solid var(--cyan); font: 500 24px/1.35 var(--font-display); letter-spacing: -.02em; color: var(--ink); }
+  .prose :global(blockquote p) { color: inherit; }
+  .prose :global(hr) { border: 0; border-top: 1px solid var(--line); margin: var(--space-16) 0; }
+
+  .gallery { display: grid; gap: var(--space-8); margin-top: var(--space-16); }
+  .gallery figure { margin: 0; }
+  .gallery img { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-sunken); }
+  .gallery figcaption { margin-top: var(--space-3); }
+
+  .nextp { margin-top: var(--space-24); }
+  .nextp a { display: grid; gap: var(--space-2); padding: var(--space-12) 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .nextp a:hover .display-md { color: var(--accent-text); }
+</style>

@@ -1,0 +1,15 @@
+---
+import { emph } from '../lib/util';
+interface Props { title: string; text: string; primary?: [string, string]; secondary?: [string, string] }
+const { title, text, primary = ['View my work', '/portfolio/'], secondary = ['Start a conversation', '/contact/'] } = Astro.props;
+---
+<div class="container">
+  <section class="cta panel panel--lit">
+    <h2 class="display-md" set:html={emph(title)} />
+    <p>{text}</p>
+    <div class="cta__btns">
+      <a class="vi-btn vi-btn--primary" href={primary[1]}>{primary[0]}</a>
+      <a class="vi-btn vi-btn--secondary" href={secondary[1]}>{secondary[0]}</a>
+    </div>
+  </section>
+</div>

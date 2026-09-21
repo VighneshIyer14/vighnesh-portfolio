@@ -1,0 +1,81 @@
+{
+  "title": "Professional *journey*.",
+  "intro": "From Hollywood VFX to product design — a career built on detail, craft and dimensional thinking.",
+  "roles": [
+    {
+      "title": "UI/UX Designer",
+      "org": "Baron Tech Labs",
+      "period": "",
+      "location": "Bangalore",
+      "points": [
+        "Designed TradeRake, a stock-market intelligence platform — the marketing site shipped; the trading product reached ~90% design-complete",
+        "Worked across market discovery, order placement, live positions and portfolio tracking"
+      ],
+      "tags": [
+        "Figma",
+        "Design systems",
+        "Fintech"
+      ]
+    },
+    {
+      "title": "3D Modeling Artist",
+      "org": "MPC Films",
+      "period": "Jul 2021 – Feb 2023",
+      "location": "",
+      "points": [
+        "Contributed to Hollywood productions including Secret Headquarters, Pinocchio and Ant-Man and the Wasp: Quantumania",
+        "Specialised in hard-surface 3D modelling for high-profile projects"
+      ],
+      "tags": [
+        "Maya",
+        "Nuke"
+      ]
+    },
+    {
+      "title": "Graphics Designer",
+      "org": "Ovion Lifestyle Pvt. Ltd.",
+      "period": "Feb 2019 – May 2020",
+      "location": "Bangalore",
+      "points": [
+        "Created product visuals, architectural renderings and marketing presentations for commercial projects",
+        "Contributed to branding through product imagery and creative campaigns"
+      ],
+      "tags": [
+        "Photoshop",
+        "After Effects",
+        "CorelDRAW"
+      ]
+    },
+    {
+      "title": "Jr. 3D Engineer",
+      "org": "TreisTek India Pvt. Ltd.",
+      "period": "Sep 2018 – Jan 2019",
+      "location": "Bangalore",
+      "points": [
+        "Designed and mapped building textures onto 3D models for architectural projects",
+        "Ran quality checks on finished models and prepared feedback reports"
+      ],
+      "tags": [
+        "3ds Max",
+        "Photoshop"
+      ]
+    }
+  ],
+  "productions": [
+    {
+      "title": "Secret Headquarters",
+      "year": "2022",
+      "studio": "MPC"
+    },
+    {
+      "title": "Guillermo del Toro's Pinocchio",
+      "year": "2022",
+      "studio": "MPC"
+    },
+    {
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "year": "2023",
+      "studio": "MPC"
+    }
+  ]
+}

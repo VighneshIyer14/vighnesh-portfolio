@@ -1,0 +1,10 @@
+---
+interface Props { items: { value: string; label: string }[] }
+const { items } = Astro.props;
+---
+<dl class="stats">
+  {items.map((s) => (
+    <div class="stat"><dt class="vi-label">{s.label}</dt><dd class="stat__v" style="margin:0;order:-1">{s.value}</dd></div>
+  ))}
+</dl>
+<style>.stat { display: flex; flex-direction: column; } .stat dt { margin-top: var(--space-2); }</style>

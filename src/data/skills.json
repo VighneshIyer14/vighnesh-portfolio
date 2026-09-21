@@ -1,0 +1,157 @@
+{
+  "title": "Skills & *expertise*",
+  "intro": "The technical and creative tools that connect 3D visualisation with UI/UX design.",
+  "groups": [
+    {
+      "name": "UI/UX Design",
+      "note": "IIIT-B certified, 4.0 CGPA",
+      "items": [
+        {
+          "name": "Figma",
+          "category": "Interface & systems",
+          "level": 70,
+          "text": "Interface design, component systems and interactive prototypes for web and mobile.",
+          "tags": [
+            "Design systems",
+            "Auto layout"
+          ]
+        },
+        {
+          "name": "User research",
+          "category": "Data-driven design",
+          "level": 60,
+          "text": "Usability testing, persona development and behavioural analysis.",
+          "tags": [
+            "A/B testing",
+            "User interviews"
+          ]
+        },
+        {
+          "name": "Interface design",
+          "category": "Interface architecture",
+          "level": 60,
+          "text": "Clean, intuitive layouts with clear hierarchy, interaction patterns and accessible components.",
+          "tags": [
+            "Journey mapping",
+            "Wireframing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3D Modeling & Texturing",
+      "note": "Film production experience",
+      "items": [
+        {
+          "name": "Autodesk Maya",
+          "category": "3D modelling",
+          "level": 85,
+          "text": "Hard-surface, prop and environment modelling for film — Ant-Man, Secret Headquarters, Pinocchio.",
+          "tags": [
+            "Props",
+            "Environments"
+          ]
+        },
+        {
+          "name": "Autodesk 3ds Max",
+          "category": "3D modelling",
+          "level": 50,
+          "text": "Modelling with a solid grasp of core tools, modifiers and workflows.",
+          "tags": [
+            "Props",
+            "Architecture"
+          ]
+        },
+        {
+          "name": "Substance Painter",
+          "category": "3D texturing",
+          "level": 70,
+          "text": "Painting and detailing 3D models with industry-standard PBR workflows.",
+          "tags": [
+            "PBR",
+            "Texturing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Graphic Design",
+      "note": "Brand, print and motion",
+      "items": [
+        {
+          "name": "Photoshop",
+          "category": "Digital imaging",
+          "level": 80,
+          "text": "Photo manipulation, compositing and retouching for print and digital.",
+          "tags": [
+            "Compositing",
+            "Retouching"
+          ]
+        },
+        {
+          "name": "Illustrator",
+          "category": "Vector graphics",
+          "level": 60,
+          "text": "Vector illustration, logo design and brand identity.",
+          "tags": [
+            "Logos",
+            "Typography"
+          ]
+        },
+        {
+          "name": "After Effects",
+          "category": "Motion graphics",
+          "level": 70,
+          "text": "Motion graphics and UI animation for marketing and product demos.",
+          "tags": [
+            "2D animation"
+          ]
+        },
+        {
+          "name": "CorelDRAW",
+          "category": "Vector & layout",
+          "level": 70,
+          "text": "Vector illustration, layout and print-ready artwork.",
+          "tags": [
+            "Print",
+            "Layout"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Technical",
+      "note": "Front-end foundations",
+      "items": [
+        {
+          "name": "HTML / CSS",
+          "category": "Front-end",
+          "level": 40,
+          "text": "Semantic HTML and modern CSS — Grid, Flexbox and responsive layouts.",
+          "tags": [
+            "CSS Grid",
+            "Responsive"
+          ]
+        }
+      ]
+    }
+  ],
+  "glance": [
+    {
+      "value": "8+",
+      "label": "Software tools"
+    },
+    {
+      "value": "3+",
+      "label": "Years experience"
+    },
+    {
+      "value": "10+",
+      "label": "Projects"
+    },
+    {
+      "value": "4",
+      "label": "Skill areas"
+    }
+  ]
+}

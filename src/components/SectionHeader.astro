@@ -1,0 +1,9 @@
+---
+interface Props { n: string; id?: string }
+const { n, id } = Astro.props;
+---
+<div class="vi-section-head">
+  <span class="vi-section-head__n" aria-hidden="true">// {n}</span>
+  <h2 class="display-md" id={id}><slot /></h2>
+  <div class="vi-section-head__aside"><slot name="aside" /></div>
+</div>

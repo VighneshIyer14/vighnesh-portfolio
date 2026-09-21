@@ -1,0 +1,11 @@
+---
+// Animated neon grid behind page headers. Nodes sit on grid intersections (48px pitch).
+const nodes = [
+  [5, 2, 0], [11, 1, 1.5], [17, 3, 3], [23, 2, 4.5], [8, 5, 2.2], [20, 6, 5.2], [26, 4, 0.8], [14, 7, 3.8],
+];
+---
+<div class="grid-bg" aria-hidden="true">
+  <div class="grid-nodes">
+    {nodes.map(([x, y, d]) => <i style={`left:${x * 48}px;top:${y * 48}px;animation-delay:${d}s`}></i>)}
+  </div>
+</div>

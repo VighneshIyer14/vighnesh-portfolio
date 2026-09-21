@@ -1,0 +1,42 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+const socials = site.socials.filter((s) => s.url);
+const quick = [['About', '/about/'], ['Skills', '/skills/'], ['Experience', '/experience/'], ['Education', '/education/'], ['Portfolio', '/portfolio/'], ['Contact', '/contact/']];
+---
+<footer class="ftr">
+  <div class="container ftr__grid">
+    <div>
+      <a class="ftr__name" href="/">{site.name}</a>
+      <p class="ftr__tag">{site.tagline}</p>
+    </div>
+    <div>
+      <h2 class="vi-label"><b>//</b> Pages</h2>
+      <ul>{quick.map(([l, h]) => <li><a href={h}>{l}</a></li>)}</ul>
+    </div>
+    <div>
+      <h2 class="vi-label"><b>//</b> Contact</h2>
+      <ul>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        {site.phone && <li><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></li>}
+        {socials.map((s) => <li><a href={s.url} target="_blank" rel="noopener">{s.label} ↗</a></li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="container ftr__bar">
+    <span class="vi-label">© {year} {site.name}</span>
+    <span class="vi-label">{site.location}</span>
+  </div>
+</footer>
+<style>
+  .ftr { margin-top: var(--space-24); border-top: 1px solid var(--line); background: var(--surface-sunken); }
+  .ftr__grid { display: grid; gap: var(--space-8); padding-top: var(--space-12); padding-bottom: var(--space-12); }
+  @media (min-width: 900px) { .ftr__grid { grid-template-columns: 2fr 1fr 1.2fr; } }
+  .ftr__name { font: 600 22px/1 var(--font-display); letter-spacing: -.03em; color: var(--ink); text-decoration: none; }
+  .ftr__tag { max-width: 380px; margin: var(--space-4) 0 0; color: var(--ink-muted); font-size: 14px; line-height: 22px; }
+  h2 { margin: 0 0 var(--space-4); }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  ul a { color: var(--ink-muted); text-decoration: none; font-size: 14px; }
+  ul a:hover { color: var(--cyan); }
+  .ftr__bar { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; padding-top: var(--space-6); padding-bottom: var(--space-6); border-top: 1px solid var(--line); }
+</style>

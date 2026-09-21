@@ -1,0 +1,26 @@
+{
+  "title": "Let's build something *together*.",
+  "intro": "Hiring for a product design role, or have a UI/UX or 3D project in mind? Send a message — I reply within 24 hours.",
+  "availability": "Available Mon–Fri, 9 AM – 6 PM IST",
+  "projectTypes": [
+    "Full-time role",
+    "UI/UX design",
+    "3D modelling",
+    "Graphic design",
+    "Other"
+  ],
+  "faq": [
+    {
+      "q": "How long does a project take?",
+      "a": "UI/UX projects usually take 2–6 weeks and 3D modelling 1–4 weeks, depending on scope."
+    },
+    {
+      "q": "What makes your approach different?",
+      "a": "I combine UX process with a VFX and 3D background — so I think about depth, light and motion as well as flows and usability."
+    },
+    {
+      "q": "What does your process look like?",
+      "a": "Discovery, personas, wireframes, prototypes, testing, then a clean handoff to development."
+    }
+  ]
+}

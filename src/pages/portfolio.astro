@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CTA from '../components/CTA.astro';
+import { getProjects } from '../lib/util';
+
+const projects = await getProjects();
+const cats = ['UI/UX Design', '3D Modeling', 'Graphic Design'];
+const count = (c: string) => projects.filter((p) => p.data.discipline === c).length;
+---
+<Base title="Portfolio" description="UI/UX case studies, 3D modelling and graphic design by Vighnesh Iyer.">
+  <PageHero label="Portfolio" title="Creative *portfolio*." intro="UI/UX case studies, 3D models from the VFX pipeline and graphic design — filter by discipline." />
+
+  <section class="container" style="margin-top: var(--space-12)" aria-label="Projects">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All projects<span class="chip__n">{projects.length}</span></button>
+      {cats.filter(count).map((c) => (
+        <button class="chip" type="button" data-filter={c} aria-pressed="false">{c}<span class="chip__n">{count(c)}</span></button>
+      ))}
+    </div>
+    <div class="grid" id="grid">
+      {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+    </div>
+  </section>
+
+  <CTA title="Ready to create something *extraordinary*?" text="Tell me about the role or the project — I reply within 24 hours." primary={['Start a conversation', '/contact/']} secondary={['About me', '/about/']} />
+</Base>
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('.filters .chip');
+  const cards = document.querySelectorAll<HTMLElement>('#grid .vi-card');
+  chips.forEach((c) => c.addEventListener('click', () => {
+    const f = c.dataset.filter;
+    chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+    cards.forEach((card) => { card.hidden = f !== 'all' && card.dataset.cat !== f; });
+  }));
+</script>
+<style>
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+  @media (min-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

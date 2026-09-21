@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import CTA from '../components/CTA.astro';
+import site from '../data/site.json';
+import exp from '../data/experience.json';
+---
+<Base title="Experience" description={exp.intro}>
+  <PageHero label="Experience" title={exp.title} intro={exp.intro}>
+    {site.cv && <p style="margin-top: var(--space-8)"><a class="vi-btn vi-btn--secondary" href={site.cv} target="_blank" rel="noopener">Download CV</a></p>}
+  </PageHero>
+
+  <section class="section container" aria-labelledby="tl">
+    <SectionHeader n="01" id="tl">Career <em>timeline</em></SectionHeader>
+    <ol class="timeline">
+      {exp.roles.map((r) => (
+        <li>
+          <div class="tl__meta">
+            {r.period && <span class="vi-label"><b>{r.period}</b></span>}
+            {r.location && <span class="vi-label">{r.location}</span>}
+          </div>
+          <h3 class="tl__title">{r.title}</h3>
+          <p class="tl__org">{r.org}</p>
+          <ul class="tl__list">{r.points.map((p) => <li>{p}</li>)}</ul>
+          <div class="tags">{r.tags.map((t) => <span class="vi-tag">{t}</span>)}</div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section container" aria-labelledby="films">
+    <SectionHeader n="02" id="films">Hollywood <em>productions</em></SectionHeader>
+    <div class="cols-3">
+      {exp.productions.map((f, i) => (
+        <article class="panel film">
+          <div class="film__perf" aria-hidden="true">{Array.from({ length: 8 }).map(() => <i></i>)}</div>
+          <p class="vi-label"><b>{f.year}</b> / {f.studio}</p>
+          <h3 style="margin-top: var(--space-3)">{f.title}</h3>
+          <p>3D modelling</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <CTA title="Let's build your next product *together*." text="Studio-grade craft, product-grade process." />
+</Base>
+<style>
+  .film { position: relative; overflow: hidden; padding-top: var(--space-12); }
+  .film__perf { position: absolute; top: 14px; left: var(--space-8); right: var(--space-8); display: flex; justify-content: space-between; }
+  .film__perf i { width: 14px; height: 9px; border-radius: 2px; background: var(--line-strong); }
+  .film:hover .film__perf i { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+</style>

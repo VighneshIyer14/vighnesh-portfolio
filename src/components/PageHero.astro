@@ -1,0 +1,13 @@
+---
+import { emph } from '../lib/util';
+interface Props { label: string; title: string; intro?: string }
+const { label, title, intro } = Astro.props;
+import GridBg from './GridBg.astro';
+---
+<section class="page-hero container">
+  <GridBg />
+  <p class="vi-label"><b>//</b> {label}</p>
+  <h1 class="display-lg page-hero__title" set:html={emph(title)} />
+  {intro && <p class="body-lg page-hero__intro">{intro}</p>}
+  <slot />
+</section>
