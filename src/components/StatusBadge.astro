@@ -6,7 +6,9 @@ import site from '../data/site.json';
 const s = site as typeof site & { currentTitle?: string; currentCompany?: string; currentCompanyUrl?: string };
 const company = (s.currentCompany || '').trim();
 const title = (s.currentTitle || '').trim() || site.role;
-const url = (s.currentCompanyUrl || '').trim();
+const rawUrl = (s.currentCompanyUrl || '').trim();
+// Accept "abc.com" as well as "https://abc.com".
+const url = rawUrl && !/^https?:\/\//i.test(rawUrl) ? `https://${rawUrl}` : rawUrl;
 ---
 {site.openToWork ? (
   <span class="vi-tag vi-tag--status">Open to work</span>
