@@ -52,9 +52,10 @@ When you're done testing, the same repo can also deploy to Cloudflare (free, fas
 
 ## Adding a new project
 1. Pages CMS → **Projects → Add an entry**.
-2. Pick the **Discipline** (UI/UX Design, 3D Modeling or Graphic Design — drives the Portfolio filter), then title, one-sentence summary, category, **cover image** (16:10, e.g. 1600×1000), tags, and write the case study (Context → Problem → Process → Outcome). Add more screens under **Gallery**.
-3. **Order**: lower = earlier. **Featured**: the big glowing card on Home. **Draft**: hidden from the site.
-4. **Save.** The site republishes in about a minute (watch it in the repo's Actions tab).
+2. Pick the **Discipline** (UI/UX Design, 3D Modeling or Graphic Design — drives the Portfolio filter), then title, one-sentence summary, category, **cover image** (16:10, e.g. 1600×1000) and tags.
+3. Build the case study in **Case study builder** with **+ Add** — mix and reorder blocks: **Heading** (numbered // 01 section), **Text**, **Image with caption** (full or content width), **Two images side by side**, **Gallery**, **Quote**, **Results / numbers**, **Callout** (glowing box), **Video** (YouTube / Vimeo / .mp4 link) and **Divider**. Drag blocks to reorder. (The older **Simple write-up** field is only used when the builder is empty.)
+4. **Order**: lower = earlier. **Featured**: the big glowing card on Home. **Draft**: hidden from the site.
+5. **Save.** The site republishes in about a minute (watch it in the repo's Actions tab).
 
 Everything else — intro, "Open to work" badge, CV, stats, skills and their levels, jobs, education, FAQ — is under the page entries in the sidebar. In any headline, wrap words in `*stars*` to make them neon purple.
 

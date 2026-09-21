@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import GridBg from '../../components/GridBg.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import CTA from '../../components/CTA.astro';
+import CaseBlocks from '../../components/CaseBlocks.astro';
 import { getProjects } from '../../lib/util';
 
 export async function getStaticPaths() {
@@ -61,7 +62,9 @@ const tools = d.year ? d.tools : [];
 
     <!-- Case study: left-aligned like other pages; each ## heading becomes a numbered section header -->
     <section class="section container" aria-label="Case study">
-      <div class="prose"><Content /></div>
+      <div class="prose">
+        {d.content.length > 0 ? <CaseBlocks blocks={d.content} /> : <Content />}
+      </div>
     </section>
 
     {d.gallery.length > 0 && (
@@ -132,6 +135,7 @@ const tools = d.year ? d.tools : [];
   .prose :global(img) { max-width: 100%; margin: var(--space-8) 0; border-radius: var(--radius-md); border: 1px solid var(--line); }
   .prose :global(blockquote) { margin: var(--space-8) 0; padding-left: var(--space-6); border-left: 2px solid var(--cyan); font: 500 clamp(20px, 2.4vw, 24px)/1.4 var(--font-display); letter-spacing: -.015em; color: var(--ink); }
   .prose :global(blockquote p) { color: inherit; font: inherit; }
+  .prose :global(.blk-fig img), .prose :global(.blk-fig video) { margin: 0; }
   .prose :global(hr) { max-width: none; border: 0; border-top: 1px solid var(--line); margin: var(--space-16) 0; }
 
   .gallery { display: grid; gap: var(--space-6); }

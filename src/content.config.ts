@@ -28,6 +28,9 @@ const projects = defineCollection({
         .default([]),
     ),
     link: str,
+    // Case-study builder: a list of blocks (heading, text, image, image-pair, gallery, quote, results, callout, video, divider).
+    // Each item stores its kind in `type`; other fields depend on the kind, so they are kept as-is.
+    content: nz(z.array(z.object({ type: z.string() }).passthrough()).optional().default([])),
     featured: nz(z.boolean().optional().default(false)),
     order: nz(z.coerce.number().optional().default(100)),
     draft: nz(z.boolean().optional().default(false)),

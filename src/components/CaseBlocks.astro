@@ -1,0 +1,125 @@
+---
+// Renders the case-study blocks built in Pages CMS (Projects → Case study builder).
+import { marked } from 'marked';
+
+type Block = { type: string; [k: string]: any };
+interface Props { blocks: Block[] }
+const { blocks } = Astro.props;
+
+const md = (s?: string) => (s ? (marked.parse(String(s), { async: false }) as string) : '');
+const imgs = (b: Block) => (Array.isArray(b.images) ? b.images : []).filter((i: any) => i && i.image);
+
+/** YouTube / Vimeo link → embeddable URL; anything else is treated as a video file. */
+function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
+  if (!url) return null;
+  const yt = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{6,})/);
+  if (yt) return { kind: 'iframe', src: `https://www.youtube-nocookie.com/embed/${yt[1]}` };
+  const vm = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vm) return { kind: 'iframe', src: `https://player.vimeo.com/video/${vm[1]}` };
+  return { kind: 'video', src: url };
+}
+---
+{blocks.map((b) => {
+  switch (b.type) {
+    case 'heading':
+      return b.text ? <h2>{b.text}</h2> : null;
+
+    case 'text':
+      return b.body ? <div class="blk-text" set:html={md(b.body)} /> : null;
+
+    case 'image':
+      return b.image ? (
+        <figure class:list={['blk-fig', b.size === 'Content width' ? 'is-narrow' : 'is-wide']}>
+          <img src={b.image} alt={b.alt || b.caption || ''} loading="lazy" decoding="async" />
+          {b.caption && <figcaption class="vi-label">{b.caption}</figcaption>}
+        </figure>
+      ) : null;
+
+    case 'image-pair':
+      return (b.left || b.right) ? (
+        <div class="blk-pair">
+          {b.left && <figure class="blk-fig"><img src={b.left} alt={b.leftCaption || ''} loading="lazy" decoding="async" />{b.leftCaption && <figcaption class="vi-label">{b.leftCaption}</figcaption>}</figure>}
+          {b.right && <figure class="blk-fig"><img src={b.right} alt={b.rightCaption || ''} loading="lazy" decoding="async" />{b.rightCaption && <figcaption class="vi-label">{b.rightCaption}</figcaption>}</figure>}
+        </div>
+      ) : null;
+
+    case 'gallery':
+      return imgs(b).length ? (
+        <div class:list={['blk-gallery', `cols-${b.columns === '2' ? 2 : 3}`]}>
+          {imgs(b).map((g: any) => (
+            <figure class="blk-fig"><img src={g.image} alt={g.caption || ''} loading="lazy" decoding="async" />{g.caption && <figcaption class="vi-label">{g.caption}</figcaption>}</figure>
+          ))}
+        </div>
+      ) : null;
+
+    case 'quote':
+      return b.quote ? (
+        <blockquote class="blk-quote">
+          <p>{b.quote}</p>
+          {b.author && <cite class="vi-label">— {b.author}</cite>}
+        </blockquote>
+      ) : null;
+
+    case 'results': {
+      const items = (Array.isArray(b.items) ? b.items : []).filter((i: any) => i && (i.value || i.label));
+      return items.length ? (
+        <div class="blk-results">
+          {b.title && <p class="vi-label"><b>//</b> {b.title}</p>}
+          <dl class="stats" style={`grid-template-columns: repeat(${Math.min(items.length, 4)}, 1fr)`}>
+            {items.map((i: any) => <div class="stat"><dd class="stat__v" style="margin:0">{i.value}</dd><dt class="vi-label">{i.label}</dt></div>)}
+          </dl>
+        </div>
+      ) : null;
+    }
+
+    case 'callout':
+      return b.body ? (
+        <aside class="panel panel--lit blk-callout">
+          {b.label && <p class="vi-label"><b>//</b> {b.label}</p>}
+          <div set:html={md(b.body)} />
+        </aside>
+      ) : null;
+
+    case 'video': {
+      const v = embed(b.url);
+      return v ? (
+        <figure class="blk-fig is-wide">
+          {v.kind === 'iframe'
+            ? <div class="blk-video"><iframe src={v.src} title={b.caption || 'Video'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            : <video src={v.src} controls playsinline preload="metadata"></video>}
+          {b.caption && <figcaption class="vi-label">{b.caption}</figcaption>}
+        </figure>
+      ) : null;
+    }
+
+    case 'divider':
+      return <hr />;
+
+    default:
+      return null;
+  }
+})}
+
+<style>
+  /* Images & media break out of the 760px text column to the full container */
+  .blk-fig { margin: var(--space-8) 0; }
+  .blk-fig.is-wide, .blk-pair, .blk-gallery, .blk-results { max-width: none !important; }
+  .blk-fig img, .blk-fig video { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-sunken); display: block; }
+  .blk-fig figcaption { margin-top: var(--space-3); }
+  .blk-pair { display: grid; gap: var(--space-6); margin: var(--space-8) 0; }
+  .blk-pair .blk-fig { margin: 0; }
+  @media (min-width: 800px) { .blk-pair { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+  .blk-gallery { display: grid; gap: var(--space-6); margin: var(--space-8) 0; }
+  .blk-gallery .blk-fig { margin: 0; }
+  @media (min-width: 700px) { .blk-gallery { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .blk-gallery.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+  .blk-video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--line); background: var(--surface-sunken); }
+  .blk-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .blk-quote cite { display: block; margin-top: var(--space-3); font-style: normal; }
+  .blk-results { margin: var(--space-8) 0; display: grid; gap: var(--space-4); }
+  .blk-results .vi-label { margin: 0; }
+  @media (max-width: 719px) { .blk-results .stats { grid-template-columns: 1fr 1fr !important; } }
+  .blk-callout { margin: var(--space-8) 0; }
+  .blk-callout :global(p) { color: var(--ink); margin: var(--space-2) 0 0; }
+  .blk-callout > .vi-label { margin: 0; }
+</style>
