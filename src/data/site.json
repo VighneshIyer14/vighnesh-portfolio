@@ -5,9 +5,10 @@
   "openToWork": true,
   "headline": "Where cinematic vision meets *user experience*.",
   "intro": "I'm Vighnesh — a product designer who spent 3.5+ years building worlds for Hollywood films before moving into UI/UX. I bring that dimensional, detail-obsessed way of seeing to B2B, SaaS and fintech products.",
-  "cv": "",
+  "tagline": "Where cinematic vision meets user experience. Bringing 3D visualisation expertise to UI/UX design.",
   "email": "vigiyer1493@gmail.com",
-  "phone": "+91 95917 70958",
+  "phone": "+91 95917 709581",
+  "whatsapp": "919591770958",
   "socials": [
     {
       "label": "LinkedIn",
@@ -22,8 +23,6 @@
       "url": "https://www.artstation.com/vigiyer"
     }
   ],
-  "whatsapp": "919591770958",
-  "tagline": "Where cinematic vision meets user experience. Bringing 3D visualisation expertise to UI/UX design.",
   "stats": [
     {
       "value": "3+",
@@ -71,6 +70,5 @@
         "CorelDRAW"
       ]
     }
-  ],
-  "formKey": ""
+  ]
 }
