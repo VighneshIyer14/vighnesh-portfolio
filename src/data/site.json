@@ -2,7 +2,10 @@
   "name": "Vighnesh Iyer",
   "role": "UI/UX & Product Designer",
   "location": "Bangalore, India",
-  "openToWork": true,
+  "openToWork": false,
+  "currentTitle": "",
+  "currentCompany": "",
+  "currentCompanyUrl": "",
   "headline": "Where cinematic vision meets *user experience*.",
   "intro": "I'm Vighnesh — a product designer who spent 3.5+ years building worlds for Hollywood films before moving into UI/UX. I bring that dimensional, detail-obsessed way of seeing to B2B, SaaS and fintech products.",
   "tagline": "Where cinematic vision meets user experience. Bringing 3D visualisation expertise to UI/UX design.",
@@ -70,5 +73,7 @@
         "CorelDRAW"
       ]
     }
-  ]
+  ],
+  "cv": "",
+  "formKey": ""
 }
