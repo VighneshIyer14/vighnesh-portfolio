@@ -7,7 +7,7 @@
       "org": "Baron Tech Labs",
       "start": "2026-09-22",
       "end": "2026-09-22",
-      "current": true,
+      "current": false,
       "location": "Bangalore",
       "points": [
         "Designed TradeRake, a stock-market intelligence platform — the marketing site shipped; the trading product reached ~90% design-complete",
