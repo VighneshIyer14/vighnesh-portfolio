@@ -251,3 +251,8 @@ content:
         fields:
           - { name: q, label: Question, type: string }
           - { name: a, label: Answer, type: text }
+
+
+      - { name: currentTitle, label: "Current job title (e.g. Product Designer)", type: string }
+      - { name: currentCompany, label: "Current company (shown when Open to work is off)", type: string }
+      - { name: currentCompanyUrl, label: "Current company website (optional)", type: string }
