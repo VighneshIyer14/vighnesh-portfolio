@@ -1,0 +1,253 @@
+# Pages CMS — edit this site at https://app.pagescms.org (log in with GitHub).
+# Every save commits to GitHub; GitHub rebuilds and the site updates in ~1 minute.
+# Docs: https://pagescms.org/docs
+
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  # ---------------------------------------------------------------- Projects
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, discipline, order, featured, draft]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - name: summary
+        label: Summary (one sentence, shown on the card)
+        type: text
+        required: true
+      - name: discipline
+        label: Discipline (drives the Portfolio filter)
+        type: select
+        required: true
+        default: UI/UX Design
+        options:
+          values: [UI/UX Design, 3D Modeling, Graphic Design]
+      - { name: category, label: "Category (e.g. Fintech, Mobile app, Vehicle, Prop)", type: string, required: true }
+      - { name: year, label: Year, type: string }
+      - { name: role, label: Your role, type: string }
+      - { name: tools, label: Tools, type: string, list: true }
+      - { name: tags, label: Tags (first 3 shown on the card), type: string, list: true }
+      - { name: cover, label: "Cover image (16:10, e.g. 1600×1000)", type: image, required: true }
+      - name: gallery
+        label: Gallery
+        type: object
+        list:
+          collapsible:
+            summary: "{index}. {caption}"
+        fields:
+          - { name: image, label: Image, type: image }
+          - { name: caption, label: Caption, type: string }
+      - { name: link, label: Live site / prototype link, type: string }
+      - { name: featured, label: Featured (big glowing card on Home), type: boolean, default: false }
+      - { name: order, label: Order (lower = earlier), type: number, default: 20 }
+      - { name: draft, label: Draft (hide from the site), type: boolean, default: false }
+      - { name: body, label: "Case study (headings: Context, Problem, Process, Outcome)", type: rich-text }
+
+  # ---------------------------------------------------------------- Home & site-wide
+  - name: site
+    label: "Home & site-wide"
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: role, label: Role, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: openToWork, label: Show “Open to work” badge, type: boolean }
+      - { name: headline, label: "Headline (wrap words in *stars* to make them neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: tagline, label: Footer tagline, type: text }
+      - { name: cv, label: CV (PDF), type: file }
+      - { name: email, label: Email, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: whatsapp, label: "WhatsApp number (digits with country code, e.g. 919591770958)", type: string }
+      - name: formKey
+        label: Contact form key (from web3forms.com — see README)
+        type: string
+      - name: socials
+        label: Social links
+        type: object
+        list:
+          collapsible:
+            summary: "{label}"
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: url, label: URL, type: string }
+      - name: stats
+        label: Stats (Home & About)
+        type: object
+        list:
+          collapsible:
+            summary: "{value} {label}"
+        fields:
+          - { name: value, label: Value, type: string }
+          - { name: label, label: Label, type: string }
+      - name: highlights
+        label: “What I do” cards
+        type: object
+        list:
+          collapsible:
+            summary: "{title}"
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: tools, label: Tools, type: string, list: true }
+
+  # ---------------------------------------------------------------- About
+  - name: about
+    label: About page
+    type: file
+    path: src/data/about.json
+    format: json
+    fields:
+      - { name: title, label: "Title (*stars* = neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: quote, label: Philosophy quote, type: text }
+      - { name: principles, label: Principles, type: string, list: true }
+      - name: timeline
+        label: Professional evolution
+        type: object
+        list:
+          collapsible:
+            summary: "{phase} · {title}"
+        fields:
+          - { name: phase, label: Phase number, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: tags, label: Tags, type: string, list: true }
+      - name: why
+        label: Why VFX makes better UX
+        type: object
+        list:
+          collapsible:
+            summary: "{title}"
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+
+  # ---------------------------------------------------------------- Skills
+  - name: skills
+    label: Skills page
+    type: file
+    path: src/data/skills.json
+    format: json
+    fields:
+      - { name: title, label: "Title (*stars* = neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: groups
+        label: Skill groups
+        type: object
+        list:
+          collapsible:
+            summary: "{name}"
+        fields:
+          - { name: name, label: Group name (also the filter button), type: string }
+          - { name: note, label: Note, type: string }
+          - name: items
+            label: Skills
+            type: object
+            list:
+              collapsible:
+                summary: "{name} — {level}%"
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: category, label: Category, type: string }
+              - { name: level, label: Level (0–100), type: number }
+              - { name: text, label: Description, type: text }
+              - { name: tags, label: Tags, type: string, list: true }
+      - name: glance
+        label: At a glance
+        type: object
+        list: true
+        fields:
+          - { name: value, label: Value, type: string }
+          - { name: label, label: Label, type: string }
+
+  # ---------------------------------------------------------------- Experience
+  - name: experience
+    label: Experience page
+    type: file
+    path: src/data/experience.json
+    format: json
+    fields:
+      - { name: title, label: "Title (*stars* = neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: roles
+        label: Roles (newest first)
+        type: object
+        list:
+          collapsible:
+            summary: "{title} — {org}"
+        fields:
+          - { name: title, label: Job title, type: string }
+          - { name: org, label: Company, type: string }
+          - { name: period, label: "Dates (e.g. Jul 2021 – Feb 2023)", type: string }
+          - { name: location, label: Location, type: string }
+          - { name: points, label: Bullet points, type: string, list: true }
+          - { name: tags, label: Tools, type: string, list: true }
+      - name: productions
+        label: Hollywood productions
+        type: object
+        list:
+          collapsible:
+            summary: "{title} ({year})"
+        fields:
+          - { name: title, label: Film, type: string }
+          - { name: year, label: Year, type: string }
+          - { name: studio, label: Studio, type: string }
+
+  # ---------------------------------------------------------------- Education
+  - name: education
+    label: Education page
+    type: file
+    path: src/data/education.json
+    format: json
+    fields:
+      - { name: title, label: "Title (*stars* = neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: items
+        label: Entries (newest first)
+        type: object
+        list:
+          collapsible:
+            summary: "{title} — {org}"
+        fields:
+          - { name: title, label: Qualification, type: string }
+          - { name: org, label: Institution, type: string }
+          - { name: period, label: Dates, type: string }
+          - { name: grade, label: Grade, type: string }
+          - { name: text, label: Description, type: text }
+          - { name: points, label: Highlights, type: string, list: true }
+
+  # ---------------------------------------------------------------- Contact
+  - name: contact
+    label: Contact page
+    type: file
+    path: src/data/contact.json
+    format: json
+    fields:
+      - { name: title, label: "Title (*stars* = neon)", type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: availability, label: Phone availability, type: string }
+      - { name: projectTypes, label: Enquiry types (form options), type: string, list: true }
+      - name: faq
+        label: FAQ
+        type: object
+        list:
+          collapsible:
+            summary: "{q}"
+        fields:
+          - { name: q, label: Question, type: string }
+          - { name: a, label: Answer, type: text }
