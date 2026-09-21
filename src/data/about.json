@@ -9,15 +9,6 @@
   ],
   "timeline": [
     {
-      "phase": "01",
-      "title": "VFX studio work",
-      "text": "Honed technical precision on major Hollywood productions including Secret Headquarters, Pinocchio and Ant-Man, specialising in 3D modelling.",
-      "tags": [
-        "Autodesk Maya",
-        "Nuke"
-      ]
-    },
-    {
       "phase": "02",
       "title": "The transition",
       "text": "Saw the chance to apply cinematic vision to digital experiences and pursued formal UX education at IIIT Bangalore, building a hybrid skill set.",
@@ -25,6 +16,15 @@
         "Design thinking",
         "User research",
         "Prototyping"
+      ]
+    },
+    {
+      "phase": "01",
+      "title": "VFX studio work",
+      "text": "Honed technical precision on major Hollywood productions including Secret Headquarters, Pinocchio and Ant-Man, specialising in 3D modelling.",
+      "tags": [
+        "Autodesk Maya",
+        "Nuke"
       ]
     },
     {
