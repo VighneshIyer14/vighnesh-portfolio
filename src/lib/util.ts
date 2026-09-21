@@ -29,3 +29,20 @@ export const emph = (s: string) => esc(s).replace(/\*([^*]+)\*/g, '<em>$1</em>')
 
 /** Plain paragraphs from text separated by blank lines. */
 export const paras = (s: string) => s.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "2021-07-01" → "Jul 2021" (day is ignored). */
+const monthYear = (d?: string) => {
+  const m = String(d ?? '').match(/^(\d{4})-(\d{1,2})/);
+  return m ? `${MONTHS[Number(m[2]) - 1]} ${m[1]}` : '';
+};
+/**
+ * Date range from the calendar fields in Pages CMS: "Jul 2021 – Feb 2023", "Aug 2024 – Present".
+ * Falls back to an old free-text `period` if no dates are set.
+ */
+export function dateRange(r: { start?: string; end?: string; current?: boolean; period?: string }) {
+  const s = monthYear(r.start);
+  const e = r.current ? 'Present' : monthYear(r.end);
+  if (s && e) return s === e ? s : `${s} – ${e}`;
+  return s || e || r.period || '';
+}

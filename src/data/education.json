@@ -5,7 +5,9 @@
     {
       "title": "UX Design Certification",
       "org": "IIIT Bangalore",
-      "period": "Aug 2024 – May 2025",
+      "start": "2024-08-01",
+      "end": "2025-05-01",
+      "current": false,
       "grade": "4.0 CGPA",
       "text": "Comprehensive programme covering user research, information architecture, interaction design and usability testing.",
       "points": [
@@ -17,7 +19,9 @@
     {
       "title": "B.Sc. Visual Communication",
       "org": "Annamalai University",
-      "period": "Jul 2019 – Dec 2023",
+      "start": "2019-07-01",
+      "end": "2023-12-01",
+      "current": false,
       "grade": "",
       "text": "Visual media, communication strategy and creative design.",
       "points": [
@@ -28,7 +32,9 @@
     {
       "title": "Arena Animation International Program (AAIP)",
       "org": "Arena Animation",
-      "period": "Mar 2015 – Jul 2018",
+      "start": "2015-03-01",
+      "end": "2018-07-01",
+      "current": false,
       "grade": "",
       "text": "Industry-oriented diploma in 2D/3D animation, visual effects, graphic design and multimedia production.",
       "points": [

@@ -5,7 +5,9 @@
     {
       "title": "UI/UX Designer",
       "org": "Baron Tech Labs",
-      "period": "",
+      "start": "",
+      "end": "",
+      "current": false,
       "location": "Bangalore",
       "points": [
         "Designed TradeRake, a stock-market intelligence platform — the marketing site shipped; the trading product reached ~90% design-complete",
@@ -20,7 +22,9 @@
     {
       "title": "3D Modeling Artist",
       "org": "MPC Films",
-      "period": "Jul 2021 – Feb 2023",
+      "start": "2021-07-01",
+      "end": "2023-02-01",
+      "current": false,
       "location": "",
       "points": [
         "Contributed to Hollywood productions including Secret Headquarters, Pinocchio and Ant-Man and the Wasp: Quantumania",
@@ -34,7 +38,9 @@
     {
       "title": "Graphics Designer",
       "org": "Ovion Lifestyle Pvt. Ltd.",
-      "period": "Feb 2019 – May 2020",
+      "start": "2019-02-01",
+      "end": "2020-05-01",
+      "current": false,
       "location": "Bangalore",
       "points": [
         "Created product visuals, architectural renderings and marketing presentations for commercial projects",
@@ -49,7 +55,9 @@
     {
       "title": "Jr. 3D Engineer",
       "org": "TreisTek India Pvt. Ltd.",
-      "period": "Sep 2018 – Jan 2019",
+      "start": "2018-09-01",
+      "end": "2019-01-01",
+      "current": false,
       "location": "Bangalore",
       "points": [
         "Designed and mapped building textures onto 3D models for architectural projects",

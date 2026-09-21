@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import CTA from '../components/CTA.astro';
 import site from '../data/site.json';
 import exp from '../data/experience.json';
+import { dateRange } from '../lib/util';
 ---
 <Base title="Experience" description={exp.intro}>
   <PageHero label="Experience" title={exp.title} intro={exp.intro}>
@@ -17,7 +18,7 @@ import exp from '../data/experience.json';
       {exp.roles.map((r) => (
         <li>
           <div class="tl__meta">
-            {r.period && <span class="vi-label"><b>{r.period}</b></span>}
+            {dateRange(r) && <span class="vi-label"><b>{dateRange(r)}</b></span>}
             {r.location && <span class="vi-label">{r.location}</span>}
           </div>
           <h3 class="tl__title">{r.title}</h3>

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CTA from '../components/CTA.astro';
 import edu from '../data/education.json';
+import { dateRange } from '../lib/util';
 ---
 <Base title="Education" description={edu.intro}>
   <PageHero label="Education" title={edu.title} intro={edu.intro} />
@@ -14,7 +15,7 @@ import edu from '../data/education.json';
       {edu.items.map((e) => (
         <li>
           <div class="tl__meta">
-            <span class="vi-label"><b>{e.period}</b></span>
+            {dateRange(e) && <span class="vi-label"><b>{dateRange(e)}</b></span>}
             {e.grade && <span class="vi-tag vi-tag--status">{e.grade}</span>}
           </div>
           <h3 class="tl__title">{e.title}</h3>

@@ -7,6 +7,7 @@ import CTA from '../components/CTA.astro';
 import site from '../data/site.json';
 import about from '../data/about.json';
 import education from '../data/education.json';
+import { dateRange } from '../lib/util';
 ---
 <Base title="About" description={about.intro}>
   <PageHero label="About" title={about.title} intro={about.intro} />
@@ -53,7 +54,7 @@ import education from '../data/education.json';
     <div class="cols-3">
       {education.items.map((e) => (
         <article class="panel">
-          <p class="vi-label">{e.period}</p>
+          {dateRange(e) && <p class="vi-label">{dateRange(e)}</p>}
           <h3 style="margin-top: var(--space-3)">{e.title}</h3>
           <p>{e.org}{e.grade && <span> · <strong style="color: var(--cyan); font-weight: 500">{e.grade}</strong></span>}</p>
         </article>
