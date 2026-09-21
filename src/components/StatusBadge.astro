@@ -1,22 +1,23 @@
 ---
-// "Open to work" when job-hunting; otherwise "UI/UX Designer at Company" (edit both in Pages CMS → Home & site-wide).
+// Open to work ON  → "Open to work" (cyan).
+// Open to work OFF → "Currently working at <Company> as <Title>" (purple), when a company is filled in.
+// Edit both in Pages CMS → Home & site-wide.
 import site from '../data/site.json';
 const s = site as typeof site & { currentTitle?: string; currentCompany?: string; currentCompanyUrl?: string };
-const company = s.currentCompany?.trim();
-const title = s.currentTitle?.trim() || site.role;
+const company = (s.currentCompany || '').trim();
+const title = (s.currentTitle || '').trim() || site.role;
+const url = (s.currentCompanyUrl || '').trim();
 ---
 {site.openToWork ? (
   <span class="vi-tag vi-tag--status">Open to work</span>
 ) : company ? (
   <span class="vi-tag vi-tag--employed">
-    {title} at {s.currentCompanyUrl
-      ? <a href={s.currentCompanyUrl} target="_blank" rel="noopener">{company}</a>
-      : <strong>{company}</strong>}
+    <span>Currently working at {url ? <a href={url} target="_blank" rel="noopener">{company}</a> : <strong>{company}</strong>} as {title}</span>
   </span>
 ) : null}
 <style>
-  .vi-tag--employed { border-color: rgba(176, 38, 255, .45); background: var(--accent-soft); color: var(--ink); border-radius: var(--radius-pill); text-transform: none; letter-spacing: .02em; }
-  .vi-tag--employed::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  .vi-tag--employed { border-color: rgba(176, 38, 255, .45); background: var(--accent-soft); color: var(--ink); border-radius: var(--radius-pill); text-transform: none; letter-spacing: .02em; max-width: 100%; }
+  .vi-tag--employed::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
   .vi-tag--employed a, .vi-tag--employed strong { color: var(--accent-text); font-weight: 600; text-decoration: none; }
   .vi-tag--employed a:hover { color: var(--cyan); }
 </style>
