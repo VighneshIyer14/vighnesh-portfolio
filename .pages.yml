@@ -7,134 +7,157 @@ media:
   output: /uploads
 
 content:
-  # ---------------------------------------------------------------- Projects
-  - name: projects
+  # ---------------------------------------------------------------- Projects (folder in the sidebar)
+  - name: projects-group
     label: Projects
-    type: collection
-    path: src/content/projects
-    format: yaml-frontmatter
-    filename: "{primary}.md"
-    view:
-      fields: [title, discipline, order, featured, draft]
-      primary: title
-      sort: [order, title]
-      default:
-        sort: order
-        order: asc
-    fields:
-      - { name: title, label: Title, type: string, required: true }
-      - name: summary
-        label: Summary (one sentence, shown on the card)
-        type: text
-        required: true
-      - name: discipline
-        label: Discipline (drives the Portfolio filter)
-        type: select
-        required: true
-        default: UI/UX Design
-        options:
-          values: [UI/UX Design, 3D Modeling, Graphic Design]
-      - { name: category, label: "Category (e.g. Fintech, Mobile app, Vehicle, Prop)", type: string, required: true }
-      - { name: year, label: Year, type: string }
-      - { name: role, label: Your role, type: string }
-      - { name: tools, label: Tools, type: string, list: true }
-      - { name: tags, label: Tags (first 3 shown on the card), type: string, list: true }
-      - { name: cover, label: "Cover image (16:10, e.g. 1600×1000)", type: image, required: true }
-      - name: gallery
-        label: Gallery
-        type: object
-        list:
-          collapsible:
-            summary: "{index}. {caption}"
+    type: group
+    items:
+      - name: projects
+        label: All projects
+        type: collection
+        path: src/content/projects
+        format: yaml-frontmatter
+        filename: "{primary}.md"
+        view:
+          fields: [title, discipline, order, featured, draft]
+          primary: title
+          sort: [order, title]
+          default:
+            sort: order
+            order: asc
         fields:
-          - { name: image, label: Image, type: image }
-          - { name: caption, label: Caption, type: string }
-      - { name: link, label: Live site / prototype link, type: string }
-      - { name: featured, label: Featured (big glowing card on Home), type: boolean, default: false }
-      - { name: order, label: Order (lower = earlier), type: number, default: 20 }
-      - { name: draft, label: Draft (hide from the site), type: boolean, default: false }
-      - name: content
-        label: "Case study builder — add blocks: Heading, Text, Image, Two images, Gallery, Quote, Results, Callout, Video, Divider"
-        type: block
-        list:
-          collapsible:
-            summary: "{index}. {type}"
-        blockKey: type
-        blocks:
-          - name: heading
-            label: Heading (numbered section, e.g. Context / Problem / Process / Outcome)
-            fields:
-              - { name: text, label: Heading, type: string, required: true }
-          - name: text
-            label: Text (paragraphs, lists, bold, links — images allowed too)
-            fields:
-              - { name: body, label: Text, type: rich-text }
-          - name: image
-            label: Image with caption
-            fields:
-              - { name: image, label: Image, type: image, required: true }
-              - { name: caption, label: Caption, type: string }
-              - { name: alt, label: "Alt text (describe the image for screen readers)", type: string }
-              - name: size
-                label: Size
-                type: select
-                default: Full width
-                options:
-                  values: [Full width, Content width]
-          - name: image-pair
-            label: Two images side by side
-            fields:
-              - { name: left, label: Left image, type: image }
-              - { name: leftCaption, label: Left caption, type: string }
-              - { name: right, label: Right image, type: image }
-              - { name: rightCaption, label: Right caption, type: string }
+          - { name: title, label: Title, type: string, required: true }
+          - name: summary
+            label: Summary (one sentence, shown on the card)
+            type: text
+            required: true
+          - name: discipline
+            label: Discipline (drives the Portfolio filter)
+            type: select
+            required: true
+            default: UI/UX Design
+            options:
+              values: [UI/UX Design, 3D Modeling, Graphic Design]
+          - { name: category, label: "Category (e.g. Fintech, Mobile app, Vehicle, Prop)", type: string, required: true }
+          - { name: year, label: Year, type: string }
+          - { name: role, label: Your role, type: string }
+          - { name: tools, label: Tools, type: string, list: true }
+          - { name: tags, label: Tags (first 3 shown on the card), type: string, list: true }
+          - { name: cover, label: "Cover image (16:10, e.g. 1600×1000)", type: image, required: true }
           - name: gallery
-            label: Gallery (grid of images)
+            label: Gallery
+            type: object
+            list:
+              collapsible:
+                summary: "{index}. {caption}"
             fields:
-              - name: columns
-                label: Columns
-                type: select
-                default: "3"
-                options:
-                  values: ["2", "3"]
-              - name: images
-                label: Images
-                type: object
-                list: true
-                fields:
-                  - { name: image, label: Image, type: image }
-                  - { name: caption, label: Caption, type: string }
-          - name: quote
-            label: Quote (user feedback, insight)
-            fields:
-              - { name: quote, label: Quote, type: text, required: true }
-              - { name: author, label: "Who said it (e.g. Usability test participant)", type: string }
-          - name: results
-            label: Results / numbers
-            fields:
-              - { name: title, label: "Title (e.g. Outcome)", type: string }
-              - name: items
-                label: Numbers
-                type: object
-                list: true
-                fields:
-                  - { name: value, label: "Value (e.g. 3×, 40%)", type: string }
-                  - { name: label, label: "Label (e.g. faster checkout)", type: string }
-          - name: callout
-            label: Callout (glowing highlight box)
-            fields:
-              - { name: label, label: "Label (e.g. Key insight)", type: string }
-              - { name: body, label: Text, type: rich-text }
-          - name: video
-            label: Video (YouTube, Vimeo or .mp4 link)
-            fields:
-              - { name: url, label: Video link, type: string, required: true }
+              - { name: image, label: Image, type: image }
               - { name: caption, label: Caption, type: string }
-          - name: divider
-            label: Divider line
-            fields:
-              - { name: note, label: "(nothing to fill in)", type: string }
-      - { name: body, label: "Simple write-up (only used when the Case study builder above is empty)", type: rich-text }
+          - { name: link, label: Live site / prototype link, type: string }
+          - { name: featured, label: Featured (big glowing card on Home), type: boolean, default: false }
+          - { name: order, label: "Order (backup only — use Projects → Reorder projects to drag)", type: number, default: 20 }
+          - { name: draft, label: Draft (hide from the site), type: boolean, default: false }
+          - name: content
+            label: Case study builder
+            description: "Click + Add to insert a block: Heading, Text, Image, Two images, Gallery, Quote, Results, Callout, Video or Divider. Drag blocks to reorder; click a block to open it."
+            type: block
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {type}"
+            blockKey: type
+            blocks:
+              - name: heading
+                label: Heading (numbered section, e.g. Context / Problem / Process / Outcome)
+                fields:
+                  - { name: text, label: Heading, type: string, required: true }
+              - name: text
+                label: Text (paragraphs, lists, bold, links — images allowed too)
+                fields:
+                  - { name: body, label: Text, type: rich-text }
+              - name: image
+                label: Image with caption
+                fields:
+                  - { name: image, label: Image, type: image, required: true }
+                  - { name: caption, label: Caption, type: string }
+                  - { name: alt, label: "Alt text (describe the image for screen readers)", type: string }
+                  - name: size
+                    label: Size
+                    type: select
+                    default: Full width
+                    options:
+                      values: [Full width, Content width]
+              - name: image-pair
+                label: Two images side by side
+                fields:
+                  - { name: left, label: Left image, type: image }
+                  - { name: leftCaption, label: Left caption, type: string }
+                  - { name: right, label: Right image, type: image }
+                  - { name: rightCaption, label: Right caption, type: string }
+              - name: gallery
+                label: Gallery (grid of images)
+                fields:
+                  - name: columns
+                    label: Columns
+                    type: select
+                    default: "3"
+                    options:
+                      values: ["2", "3"]
+                  - name: images
+                    label: Images
+                    type: object
+                    list: true
+                    fields:
+                      - { name: image, label: Image, type: image }
+                      - { name: caption, label: Caption, type: string }
+              - name: quote
+                label: Quote (user feedback, insight)
+                fields:
+                  - { name: quote, label: Quote, type: text, required: true }
+                  - { name: author, label: "Who said it (e.g. Usability test participant)", type: string }
+              - name: results
+                label: Results / numbers
+                fields:
+                  - { name: title, label: "Title (e.g. Outcome)", type: string }
+                  - name: items
+                    label: Numbers
+                    type: object
+                    list: true
+                    fields:
+                      - { name: value, label: "Value (e.g. 3×, 40%)", type: string }
+                      - { name: label, label: "Label (e.g. faster checkout)", type: string }
+              - name: callout
+                label: Callout (glowing highlight box)
+                fields:
+                  - { name: label, label: "Label (e.g. Key insight)", type: string }
+                  - { name: body, label: Text, type: rich-text }
+              - name: video
+                label: Video (YouTube, Vimeo or .mp4 link)
+                fields:
+                  - { name: url, label: Video link, type: string, required: true }
+                  - { name: caption, label: Caption, type: string }
+              - name: divider
+                label: Divider line
+                fields:
+                  - { name: note, label: "(nothing to fill in)", type: string }
+          - { name: body, label: "Simple write-up (only used when the Case study builder above is empty)", type: rich-text }
+
+      - name: order
+        label: Reorder projects (drag)
+        type: file
+        path: src/data/order.json
+        format: json
+        fields:
+          - name: projects
+            label: Projects — drag to reorder (top = first on the site)
+            description: "Grab the handle on the left of a row and drag. New projects appear after this list until you add them here with + Add."
+            type: reference
+            list: true
+            options:
+              collection: projects
+              search: title
+              label: "{title}"
+
 
   # ---------------------------------------------------------------- Home & site-wide
   - name: site
