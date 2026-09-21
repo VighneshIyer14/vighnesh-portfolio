@@ -45,21 +45,21 @@
   ],
   "highlights": [
     {
-      "title": "UI/UX Design",
-      "text": "Research-led interfaces, design systems and prototypes for web and mobile.",
-      "tools": [
-        "Figma",
-        "Adobe XD",
-        "Prototyping"
-      ]
-    },
-    {
       "title": "3D Modeling & VFX",
       "text": "Hard-surface and prop modelling for feature films at MPC.",
       "tools": [
         "Maya",
         "Nuke",
         "Substance Painter"
+      ]
+    },
+    {
+      "title": "UI/UX Design",
+      "text": "Research-led interfaces, design systems and prototypes for web and mobile.",
+      "tools": [
+        "Figma",
+        "Adobe XD",
+        "Prototyping"
       ]
     },
     {
