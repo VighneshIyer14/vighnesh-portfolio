@@ -5,9 +5,9 @@
     {
       "title": "UI/UX Designer",
       "org": "Baron Tech Labs",
-      "start": "",
-      "end": "",
-      "current": false,
+      "start": "2026-09-22",
+      "end": "2026-09-22",
+      "current": true,
       "location": "Bangalore",
       "points": [
         "Designed TradeRake, a stock-market intelligence platform — the marketing site shipped; the trading product reached ~90% design-complete",
@@ -25,7 +25,6 @@
       "start": "2021-07-01",
       "end": "2023-02-01",
       "current": false,
-      "location": "",
       "points": [
         "Contributed to Hollywood productions including Secret Headquarters, Pinocchio and Ant-Man and the Wasp: Quantumania",
         "Specialised in hard-surface 3D modelling for high-profile projects"
