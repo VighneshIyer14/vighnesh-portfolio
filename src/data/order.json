@@ -1,7 +1,7 @@
 {
   "projects": [
-    "src/content/projects/hmi-interface.md",
     "src/content/projects/traderake.md",
+    "src/content/projects/hmi-interface.md",
     "src/content/projects/cyberbid.md",
     "src/content/projects/tripora.md",
     "src/content/projects/profile-website.md",
