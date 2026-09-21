@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import StatusBadge from '../components/StatusBadge.astro';
 import site from '../data/site.json';
 import c from '../data/contact.json';
 
@@ -16,7 +17,7 @@ const socials = site.socials.filter((s) => s.url);
 ---
 <Base title="Contact" description={c.intro}>
   <PageHero label="Contact" title={c.title} intro={c.intro}>
-    {site.openToWork && <p style="margin-top: var(--space-6)"><span class="vi-tag vi-tag--status">Open to work</span></p>}
+    <p style="margin-top: var(--space-6)"><StatusBadge /></p>
   </PageHero>
 
   <section class="section container" style="padding-top: var(--space-12)" aria-label="Ways to reach me">
