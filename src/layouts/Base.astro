@@ -3,6 +3,7 @@ import '../styles/global.css';
 import site from '../data/site.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import TabBar from '../components/TabBar.astro';
 
 interface Props { title?: string; description?: string; image?: string }
 const { title, description = site.intro, image } = Astro.props;
@@ -13,7 +14,7 @@ const ogImage = image && Astro.site ? new URL(image, Astro.site).href : undefine
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {Astro.site && <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />}
@@ -31,5 +32,6 @@ const ogImage = image && Astro.site ? new URL(image, Astro.site).href : undefine
     <Header />
     <main id="main"><slot /></main>
     <Footer />
+    <TabBar />
   </body>
 </html>
