@@ -29,7 +29,7 @@ function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
 
     case 'image':
       return b.image ? (
-        <figure class:list={['blk-fig', b.size === 'Content width' ? 'is-narrow' : 'is-wide']}>
+        <figure class:list={['blk-fig', b.size === 'Content width' ? 'is-narrow' : 'is-wide', { 'is-bare': b.transparent }]}>
           <img src={b.image} alt={b.alt || b.caption || ''} loading="lazy" decoding="async" />
           {b.caption && <figcaption class="vi-label">{b.caption}</figcaption>}
         </figure>
@@ -123,6 +123,8 @@ function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
   .blk-fig { margin: var(--space-8) 0; }
   .blk-fig.is-wide, .blk-pair, .blk-gallery, .blk-results { max-width: none !important; }
   .blk-fig img, .blk-fig video { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-sunken); display: block; }
+  /* Transparent PNG / SVG: no frame, no fill — it sits straight on the page */
+  .blk-fig.is-bare img { border: 0; background: none; border-radius: 0; }
   .blk-fig figcaption { margin-top: var(--space-3); }
   .blk-pair { display: grid; gap: var(--space-6); margin: var(--space-8) 0; }
   .blk-pair .blk-fig { margin: 0; }
