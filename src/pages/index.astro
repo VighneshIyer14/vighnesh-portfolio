@@ -6,9 +6,10 @@ import site from '../data/site.json';
 import Stats from '../components/Stats.astro';
 import StatusBadge from '../components/StatusBadge.astro';
 import CTA from '../components/CTA.astro';
-import { getProjects, emph } from '../lib/util';
+import { getProjects, emph, paras } from '../lib/util';
 
 const selected = (await getProjects()).slice(0, 5);
+const highlight = ((site as { introHighlight?: string }).introHighlight || '').trim();
 const company = ((site as { currentCompany?: string }).currentCompany || '').trim();
 import GridBg from '../components/GridBg.astro';
 ---
@@ -27,7 +28,8 @@ import GridBg from '../components/GridBg.astro';
       <span class="vi-label">{site.role} · {site.location}</span>
     </div>
     <h1 class="display-xl hero__title" id="hero-title" set:html={emph(site.headline)} />
-    <p class="body-lg hero__intro">{site.intro}</p>
+    <div class="hero__intro">{paras(site.intro || '').map((t) => <p class="body-lg" set:html={emph(t)} />)}</div>
+    {highlight && <p class="hero__highlight">{highlight}</p>}
     <div class="hero__cta">
       <a class="vi-btn vi-btn--primary" href="/portfolio/">View work</a>
       {site.cv && <a class="vi-btn vi-btn--secondary" href={site.cv} target="_blank" rel="noopener">Download CV</a>}
@@ -70,7 +72,10 @@ import GridBg from '../components/GridBg.astro';
   @media (max-width: 720px) { .hero { padding-top: var(--space-16); } }
   .hero__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); margin-bottom: var(--space-8); }
   .hero__title { max-width: 14ch; position: relative; }
-  .hero__intro { max-width: 620px; margin: var(--space-8) 0 0; }
+  .hero__intro { max-width: 620px; margin: var(--space-8) 0 0; display: grid; gap: var(--space-4); }
+  .hero__intro p { margin: 0; }
+  .hero__intro :global(em) { font: inherit; font-style: normal; color: var(--cyan); text-shadow: 0 0 18px color-mix(in srgb, var(--cyan) 35%, transparent); }
+  .hero__highlight { max-width: 620px; margin: var(--space-4) 0 0; font: 500 clamp(17px, 1.6vw, 19px)/1.5 var(--font-sans); color: var(--cyan); text-shadow: 0 0 18px color-mix(in srgb, var(--cyan) 35%, transparent); }
   .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); margin-top: var(--space-12); }
 
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
