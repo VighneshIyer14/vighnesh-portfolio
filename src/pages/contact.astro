@@ -39,7 +39,7 @@ const socials = site.socials.filter((s) => s.url);
         {site.formKey ? (
         <form class="form" id="contact-form" method="POST" action="https://api.web3forms.com/submit">
           <input type="hidden" name="access_key" value={site.formKey} />
-          <input type="hidden" name="subject" value={`New message from ${site.name} portfolio`} />
+          <input type="hidden" name="subject" value="Portfolio enquiry" />
           <input type="hidden" name="from_name" value={`${site.name} — portfolio`} />
           <input type="hidden" name="redirect" value={Astro.site ? new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'thanks/', Astro.site).href : 'https://web3forms.com/success'} />
           <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -102,6 +102,16 @@ const socials = site.socials.filter((s) => s.url);
   const form = document.getElementById('contact-form');
   const r = form?.querySelector<HTMLInputElement>('input[name="redirect"]');
   if (r) r.value = new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'thanks/', location.origin).href;
+
+  // Email subject you receive, e.g. "Portfolio enquiry · Full-time role · Priya Sharma (Acme Corp)"
+  form?.addEventListener('submit', () => {
+    const f = form as HTMLFormElement;
+    const val = (n: string) => ((f.elements.namedItem(n) as HTMLInputElement | null)?.value || '').trim();
+    const type = (f.querySelector('input[name="type"]:checked') as HTMLInputElement | null)?.value || '';
+    const who = val('name') + (val('company') ? ` (${val('company')})` : '');
+    const subj = f.querySelector<HTMLInputElement>('input[name="subject"]');
+    if (subj) subj.value = ['Portfolio enquiry', type, who].filter(Boolean).join(' · ');
+  });
 </script>
 <style>
   .botcheck { display: none; }
