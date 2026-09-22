@@ -55,7 +55,11 @@ The approach taken was not only to create a functional display, but also to make
 
 **Sketches –** Once the requirements are clear, rough sketches and hand-drawn concepts are created to visualize the interface. These sketches provide an early representation of the layout, navigation flow, and key elements. After review and refinement, the approved concepts are translated into UI design software, where they evolve into detailed digital prototypes.
 
+![](/uploads/image_002.png)
+
 **Wireframes –** Once the requirements are clear, rough sketches and hand-drawn concepts are created to visualize the interface. These sketches provide an early representation of the layout, navigation flow, and key elements. After review and refinement, the approved concepts are translated into UI design software, where they evolve into detailed digital prototypes.
+
+![](/uploads/image_001.png)
 
 **High-Fidelity Design –** Building upon the wireframes, high-definition mock-ups are created to explore visual styles, color schemes, and layout refinements. These designs showcase how on-screen controls, indicators, and navigation will appear in a real environment.  
   
