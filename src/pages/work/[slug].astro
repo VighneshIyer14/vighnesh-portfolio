@@ -63,7 +63,8 @@ const tools = d.year ? d.tools : [];
     <!-- Case study: left-aligned like other pages; each ## heading becomes a numbered section header -->
     <section class="section container" aria-label="Case study">
       <div class="prose">
-        {d.content.length > 0 ? <CaseBlocks blocks={d.content} /> : <Content />}
+        {d.content.length > 0 && <CaseBlocks blocks={d.content} />}
+        <Content />
       </div>
     </section>
 
