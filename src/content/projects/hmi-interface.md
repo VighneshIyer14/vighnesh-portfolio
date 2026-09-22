@@ -16,10 +16,20 @@ order: 2
 draft: false
 content:
   - type: steps
-    title: UI UX Design Process for Creation of HMI's
+    title: How I Worked
     items:
       - title: Sketches
-        text: Rough Out And Sketch Hand Drawn Concept
+        text: Rough hand-drawn cluster layouts, exploring where speed, fuel and alerts
+          sit so the eye finds them fast.
+      - title: Wireframes
+        text: "Layout concepts and screen flows: how the driver moves between drive,
+          navigation and media views."
+      - title: Design mock-ups
+        text: The wireframes built into high-definition screens, with a consistent
+          colour code for routine, warning and critical states.
+      - title: Final design
+        text: Final screens presented for sign-off, with icons, specs and assets handed
+          over to the development team.
 ---
 ## Overview
 
