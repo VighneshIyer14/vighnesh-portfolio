@@ -174,7 +174,11 @@ content:
       - { name: currentCompany, label: "Current company — shown as “Currently working at … as …” when Open to work is OFF", type: string }
       - { name: currentCompanyUrl, label: "Current company website (optional)", type: string }
       - { name: headline, label: "Headline (wrap words in *stars* to make them neon)", type: string }
-      - { name: intro, label: Intro, type: text }
+      - { name: intro, label: "Intro (blank line = new paragraph, *stars* = cyan)", type: text }
+      - name: introHighlight
+        label: Highlight line (shown in cyan under the intro, above “View work”)
+        description: "One short sentence. Leave empty to hide it."
+        type: string
       - { name: tagline, label: Footer tagline, type: text }
       - { name: cv, label: CV (PDF), type: file }
       - { name: email, label: Email, type: string }
