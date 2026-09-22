@@ -51,9 +51,15 @@ The approach taken was not only to create a functional display, but also to make
 
 **Layout –** The arrangement of information on each screen should reflect the way the system is actually used. A logical, uncluttered layout makes navigation intuitive and prevents errors in operation. Grouping related elements together and reducing unnecessary content ensures that the user can interact with the system quickly and accurately.
 
-```
+![](</uploads/image_003 1.png>)
 
-```
+**Sketches –** Once the requirements are clear, rough sketches and hand-drawn concepts are created to visualize the interface. These sketches provide an early representation of the layout, navigation flow, and key elements. After review and refinement, the approved concepts are translated into UI design software, where they evolve into detailed digital prototypes.
+
+**Wireframes –** Once the requirements are clear, rough sketches and hand-drawn concepts are created to visualize the interface. These sketches provide an early representation of the layout, navigation flow, and key elements. After review and refinement, the approved concepts are translated into UI design software, where they evolve into detailed digital prototypes.
+
+**High-Fidelity Design –** Building upon the wireframes, high-definition mock-ups are created to explore visual styles, color schemes, and layout refinements. These designs showcase how on-screen controls, indicators, and navigation will appear in a real environment.  
+  
+At this stage, technical constraints are reviewed with the engineering perspective in mind, ensuring that the designs are not only visually appealing but also feasible for implementation. The final version of the HMI interface is then consolidated and handed over for development, representing a complete and functional design system ready for production.
 
 ## What I did
 
