@@ -6,6 +6,7 @@ import SectionHeader from '../../components/SectionHeader.astro';
 import CTA from '../../components/CTA.astro';
 import CaseBlocks from '../../components/CaseBlocks.astro';
 import { getProjects } from '../../lib/util';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const projects = await getProjects();
@@ -26,6 +27,28 @@ const facts = [
   { k: d.year ? 'Year' : 'Tools', v: d.year || d.tools.join(', ') },
 ].filter((f) => f.v);
 const tools = d.year ? d.tools : [];
+
+/**
+ * The write-up can place builder blocks inside itself with a marker on its own line:
+ *   [[1]]  → the 1st block in the Case study builder
+ * Text is split at those markers; blocks that aren't placed are shown after the text.
+ */
+const raw = (project.body || '').trim();
+const blocks = d.content as any[];
+const used = new Set<number>();
+const parts: Array<{ html?: string; block?: any }> = [];
+if (raw) {
+  const chunks = raw.split(/^[ \t]*\[\[[ \t]*(\d+)[ \t]*\]\][ \t]*$/m);
+  chunks.forEach((chunk, i) => {
+    if (i % 2 === 1) {
+      const idx = Number(chunk) - 1;
+      if (blocks[idx]) { parts.push({ block: blocks[idx] }); used.add(idx); }
+    } else if (chunk.trim()) {
+      parts.push({ html: marked.parse(chunk, { async: false }) as string });
+    }
+  });
+}
+const leftover = blocks.filter((_, i) => !used.has(i));
 ---
 <Base title={d.title} description={d.summary} image={d.cover}>
   <article>
@@ -63,8 +86,11 @@ const tools = d.year ? d.tools : [];
     <!-- Case study: left-aligned like other pages; each ## heading becomes a numbered section header -->
     <section class="section container" aria-label="Case study">
       <div class="prose">
-        {d.content.length > 0 && <CaseBlocks blocks={d.content} />}
-        <Content />
+        {parts.length > 0
+          ? parts.map((p) => (p.block ? <CaseBlocks blocks={[p.block]} /> : <div set:html={p.html} />))
+          : null}
+        {leftover.length > 0 && <CaseBlocks blocks={leftover} />}
+        {!raw && blocks.length === 0 && <Content />}
       </div>
     </section>
 
