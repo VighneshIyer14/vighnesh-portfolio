@@ -59,7 +59,7 @@ content:
           - { name: draft, label: Draft (hide from the site), type: boolean, default: false }
           - name: content
             label: Case study builder
-            description: "Click + Add to insert a block: Heading, Text, Image, Two images, Gallery, Quote, Results, Callout, Video or Divider. Drag blocks to reorder; click a block to open it."
+            description: "Click + Add to insert a block: Heading, Text, Image, Two images, Gallery, Quote, Process steps, Results, Callout, Video or Divider. Drag blocks to reorder; click a block to open it."
             type: block
             list:
               collapsible:
@@ -126,6 +126,19 @@ content:
                     fields:
                       - { name: value, label: "Value (e.g. 3×, 40%)", type: string }
                       - { name: label, label: "Label (e.g. faster checkout)", type: string }
+              - name: steps
+                label: Process steps (numbered row, e.g. Sketches → Wireframes → Mock-ups → Final)
+                fields:
+                  - { name: title, label: "Title (e.g. How I worked)", type: string }
+                  - name: items
+                    label: Steps (2–4 works best)
+                    type: object
+                    list:
+                      collapsible:
+                        summary: "{index}. {title}"
+                    fields:
+                      - { name: title, label: "Step name (e.g. Sketches)", type: string }
+                      - { name: text, label: "What you did and what came out of it", type: text }
               - name: callout
                 label: Callout (glowing highlight box)
                 fields:
@@ -174,6 +187,7 @@ content:
       - { name: currentCompany, label: "Current company — shown as “Currently working at … as …” when Open to work is OFF", type: string }
       - { name: currentCompanyUrl, label: "Current company website (optional)", type: string }
       - { name: headline, label: "Headline (wrap words in *stars* to make them neon)", type: string }
+      - { name: heroImage, label: "Home hero image (replaces the drawn shapes beside the headline — leave empty for the shapes)", type: image }
       - { name: intro, label: "Intro (blank line = new paragraph, *stars* = cyan)", type: text }
       - name: introHighlight
         label: Highlight line (shown in cyan under the intro, above “View work”)
@@ -181,6 +195,7 @@ content:
         type: string
       - { name: tagline, label: Footer tagline, type: text }
       - { name: cv, label: CV (PDF), type: file }
+      - { name: shareImage, label: "Link preview image (shown when you share the site on LinkedIn/WhatsApp — 1200×630)", type: image }
       - { name: email, label: Email, type: string }
       - { name: phone, label: Phone, type: string }
       - { name: whatsapp, label: "WhatsApp number (digits with country code, e.g. 919591770958)", type: string }
@@ -214,6 +229,7 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
+          - { name: image, label: "Image (optional, 16:10)", type: image }
           - { name: tools, label: Tools, type: string, list: true }
 
   # ---------------------------------------------------------------- About
@@ -225,6 +241,8 @@ content:
     fields:
       - { name: title, label: "Title (*stars* = neon)", type: string }
       - { name: intro, label: Intro, type: text }
+      - { name: photo, label: "Photo of you (optional, shown under the intro)", type: image }
+      - { name: photoCaption, label: Photo caption, type: string }
       - { name: quote, label: Philosophy quote, type: text }
       - { name: principles, label: Principles, type: string, list: true }
       - name: timeline
@@ -238,6 +256,7 @@ content:
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
           - { name: tags, label: Tags, type: string, list: true }
+          - { name: image, label: "Image (optional)", type: image }
       - name: why
         label: Why VFX makes better UX
         type: object
@@ -304,6 +323,7 @@ content:
         fields:
           - { name: title, label: Job title, type: string }
           - { name: org, label: Company, type: string }
+          - { name: logo, label: "Company logo (optional, square)", type: image }
           - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
           - { name: end, label: End date, type: date }
           - { name: current, label: "I still work here (shows “Present” instead of the end date)", type: boolean, default: false }
@@ -339,6 +359,7 @@ content:
         fields:
           - { name: title, label: Qualification, type: string }
           - { name: org, label: Institution, type: string }
+          - { name: logo, label: "Institution logo (optional, square)", type: image }
           - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
           - { name: end, label: End date, type: date }
           - { name: current, label: "Still studying here (shows “Present” instead of the end date)", type: boolean, default: false }
