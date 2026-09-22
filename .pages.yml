@@ -81,6 +81,7 @@ content:
                   - { name: image, label: Image, type: image, required: true }
                   - { name: caption, label: Caption, type: string }
                   - { name: alt, label: "Alt text (describe the image for screen readers)", type: string }
+                  - { name: transparent, label: "Transparent image (PNG/SVG with no background — drops the frame)", type: boolean, default: false }
                   - name: size
                     label: Size
                     type: select
@@ -205,6 +206,18 @@ content:
       - name: formKey
         label: Contact form key (from web3forms.com — see README)
         type: string
+      - { name: cmsRepo, label: "Edit button — repo (owner/repo)", type: string }
+      - { name: cmsBranch, label: "Edit button — branch", type: string, default: main }
+      - name: editDevices
+        label: Edit button — devices
+        description: "Devices that may show the Edit button. To add one: open your site with ?edit=new on that device, copy the fingerprint it shows, then + Add a row here with a name and that fingerprint. Delete a row to revoke that device."
+        type: object
+        list:
+          collapsible:
+            summary: "{name}"
+        fields:
+          - { name: name, label: "Device name (e.g. Main PC)", type: string }
+          - { name: hash, label: "Fingerprint (64 characters, from ?edit=new on that device)", type: string }
       - name: socials
         label: Social links
         type: object
