@@ -16,6 +16,10 @@ order: 2
 draft: false
 content:
   - type: steps
+    title: UI UX Design Process for Creation of HMI's
+    items:
+      - title: Sketches
+        text: Rough Out And Sketch Hand Drawn Concept
 ---
 ## Overview
 
