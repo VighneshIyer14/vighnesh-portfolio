@@ -10,7 +10,7 @@ tools:
 tags:
   - HMI
   - Research
-cover: /uploads/image_004 1-1.png
+cover: /uploads/image_004-1.png
 featured: false
 order: 2
 draft: false
