@@ -153,7 +153,7 @@ content:
                 label: Divider line
                 fields:
                   - { name: note, label: "(nothing to fill in)", type: string }
-          - { name: body, label: "Simple write-up (only used when the Case study builder above is empty)", type: rich-text }
+          - { name: body, label: "Simple write-up (optional — shows after the blocks above)", type: rich-text }
 
       - name: order
         label: Reorder projects (drag)
