@@ -14,6 +14,7 @@ tags:
   - Marketplace
   - Research
 cover: /uploads/image_006.png
+link: https://www.figma.com/proto/kQWnDQCZ3B395s5fmqUdLP/Auction-v2?node-id=295-4465&viewport=295%2C303%2C0.08&t=r2tZWgHYy2wrUeTA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=295%3A4571&show-proto-sidebar=1&page-id=295%3A4464
 featured: false
 order: 3
 draft: false
