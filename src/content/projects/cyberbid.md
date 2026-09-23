@@ -353,7 +353,7 @@ content:
       platform's colour, typography and iconography, so the result reads as one
       consistent product rather than a set of screens.
   - type: image
-    image: /uploads/image_006.png
+    image: /uploads/image_015.png
     caption: Low-fidelity wireframes, high-fidelity Screens
     alt: High-fidelity screens
     transparent: false
