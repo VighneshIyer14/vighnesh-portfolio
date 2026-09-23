@@ -336,7 +336,7 @@ content:
     transparent: true
     size: Full width
   - type: image
-    image: /uploads/image_012.png
+    image: /uploads/image_013.png
     caption: Information architecture
     alt: Information Architecture Diagram
     transparent: true
