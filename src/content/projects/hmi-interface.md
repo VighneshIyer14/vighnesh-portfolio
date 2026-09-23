@@ -10,7 +10,7 @@ tools:
 tags:
   - HMI
   - Research
-cover: /uploads/image_004-1.png
+cover: /uploads/image_004.png
 featured: false
 order: 2
 draft: false
@@ -62,7 +62,7 @@ The approach taken was not only to create a functional display, but also to make
 ![](/uploads/image_001.png)
 
 **High-Fidelity Design –** Building upon the wireframes, high-definition mock-ups are created to explore visual styles, color schemes, and layout refinements. These designs showcase how on-screen controls, indicators, and navigation will appear in a real environment.  
-  
+
 At this stage, technical constraints are reviewed with the engineering perspective in mind, ensuring that the designs are not only visually appealing but also feasible for implementation. The final version of the HMI interface is then consolidated and handed over for development, representing a complete and functional design system ready for production.
 
 ## What I did
