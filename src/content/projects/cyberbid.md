@@ -332,13 +332,13 @@ content:
     image: /uploads/image_011.png
     caption: User flows — registration, buyer and seller
     alt: User flow diagrams
-    transparent: false
+    transparent: true
     size: Full width
   - type: image
     image: /uploads/image_012.png
     caption: Information architecture
     alt: Information architecture diagram
-    transparent: false
+    transparent: true
     size: Full width
   - type: heading
     text: Wireframes to high-fidelity UI
