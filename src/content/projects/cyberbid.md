@@ -164,8 +164,8 @@ content:
         label: were limited by platform rules on digital sales
   - type: image
     image: /uploads/image_013.png
-    caption: Buyer pain points, mapped from the research
-    alt: Buyer pain point board
+    caption: Buyer/Seller pain points, mapped from the research
+    alt: Buyer/Seller pain point board
     transparent: false
     size: Full width
   - type: heading
@@ -355,7 +355,11 @@ content:
   - type: image
     image: /uploads/image_015.png
     caption: Low-fidelity wireframes, high-fidelity Screens
-    alt: High-fidelity screens
+    alt: Low-High-fidelity screens
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_016.png
     transparent: false
     size: Full width
   - type: heading
