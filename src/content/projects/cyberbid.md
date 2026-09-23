@@ -10,7 +10,7 @@ tools:
 tags:
   - Web app
   - Marketplace
-cover: /uploads/cyberbid-cover.svg
+cover: /uploads/image_006.png
 featured: false
 order: 3
 draft: false
