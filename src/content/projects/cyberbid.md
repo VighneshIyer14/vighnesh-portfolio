@@ -354,12 +354,13 @@ content:
       consistent product rather than a set of screens.
   - type: image
     image: /uploads/image_015.png
-    caption: Low-fidelity wireframes, high-fidelity Screens
     alt: Low-High-fidelity screens
     transparent: false
     size: Full width
   - type: image
     image: /uploads/image_016.png
+    caption: Low-fidelity wireframes, high-fidelity Screens
+    alt: Low-High-fidelity screens
     transparent: false
     size: Full width
   - type: heading
