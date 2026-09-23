@@ -167,7 +167,7 @@ content:
     image: /uploads/image_013.png
     caption: Buyer/Seller pain points, mapped from the research
     alt: Buyer/Seller pain point board
-    transparent: false
+    transparent: true
     size: Full width
   - type: heading
     text: Where existing tools fall short
