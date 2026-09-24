@@ -14,6 +14,7 @@ tags:
   - Travel
   - Research
 cover: /uploads/image_017.png
+link: https://www.figma.com/proto/xeVvqe2nwy32v8nxcdfmRl/tripora-Travel-App?node-id=871-12583&viewport=608%2C292%2C0.06&t=IcPQNWkTsYywo6M9-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=871%3A12557&page-id=871%3A9512
 featured: false
 order: 4
 draft: false
