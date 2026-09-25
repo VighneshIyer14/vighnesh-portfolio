@@ -69,6 +69,54 @@ content:
         label: struggled with shipping costs or payment disputes
       - value: 45%
         label: were limited by platform rules on digital sales
+  - type: image
+    image: /uploads/image_013.png
+    caption: Buyer/Seller pain points, mapped from the research
+    alt: Buyer/Seller pain point board
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_009.png
+    caption: Arjun Mehta — buyer persona
+    alt: Buyer persona
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_010.png
+    caption: Seller persona
+    alt: Seller persona
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_014.png
+    caption: User journey map
+    alt: User journey map
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_011.png
+    caption: User flows — registration, buyer and seller
+    alt: User flow diagrams
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_012.png
+    caption: Information architecture
+    alt: Information Architecture Diagram
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_015.png
+    caption: Low-High-fidelity screens
+    alt: Low-High-fidelity screens
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_016.png
+    caption: Low-fidelity wireframes, high-fidelity Screens
+    alt: Low-High-fidelity screens
+    transparent: false
+    size: Full width
 ---
 ## Overview
 
@@ -132,7 +180,7 @@ The interviews confirmed most of my early hypotheses and reshaped the problem de
 
 [[4]]
 
-![Buyer/Seller pain points, mapped from the research](/uploads/image_013.png)
+[[5]]
 
 ## Where existing tools fall short
 
@@ -174,11 +222,11 @@ The interviews confirmed most of my early hypotheses and reshaped the problem de
 
 I turned the research into four personas covering both sides of the marketplace, then mapped their journeys to find where the experience breaks: the moment a buyer doubts a listing, and the moment a seller loses a sale to a question they cannot answer.
 
-![Arjun Mehta — buyer persona](/uploads/image_009.png)
+[[6]]
 
-![Seller persona](/uploads/image_010.png)
+[[7]]
 
-![User journey map](/uploads/image_014.png)
+[[8]]
 
 ## How might we
 
@@ -204,9 +252,9 @@ Each pain point became a question to design against.
 
 From there I mapped three flows — registration and home, the buyer path, and the seller path — and built the information architecture around them, so that posting, bidding, tracking and awarding all live in one structure instead of four.
 
-![User flows — registration, buyer and seller](/uploads/image_011.png)
+[[9]]
 
-![Information architecture](/uploads/image_012.png)
+[[10]]
 
 ## Wireframes to high-fidelity UI
 
@@ -214,9 +262,9 @@ I started with digital low-fidelity wireframes, which let me iterate fast, make 
 
 Once the structure and flows held up, I built them out in Figma with the platform's colour, typography and iconography, so the result reads as one consistent product rather than a set of screens.
 
-![Low-High-fidelity screens](/uploads/image_015.png)
+[[11]]
 
-![Low-fidelity wireframes, high-fidelity Screens](/uploads/image_016.png)
+[[12]]
 
 ## Prototype and testing
 

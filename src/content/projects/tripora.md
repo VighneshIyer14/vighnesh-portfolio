@@ -59,6 +59,60 @@ content:
         label: found suggestions did not match their budget or taste
       - value: 40%
         label: missed deals because alerts came too late
+  - type: image
+    image: /uploads/image_018.png
+    caption: Pain points, mapped from the research
+    alt: Pain point board
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_019.png
+    caption: User personas
+    alt: User personas
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_020.png
+    caption: Customer journey map
+    alt: Customer journey map
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_021.png
+    caption: User flow — registration and home
+    alt: Registration and home flow
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_022.png
+    caption: User flow — booking
+    alt: Booking flow
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_023.png
+    caption: Information architecture
+    alt: Information architecture
+    transparent: true
+    size: Full width
+  - type: image
+    image: /uploads/image_024.png
+    caption: Style guide
+    alt: Style guide
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_025.png
+    caption: Low-fidelity wireframes
+    alt: Wireframes
+    transparent: false
+    size: Full width
+  - type: image
+    image: /uploads/image_026.png
+    caption: The same screens, high-fidelity
+    alt: High-fidelity screens
+    transparent: false
+    size: Full width
 ---
 ## Overview
 
@@ -114,7 +168,7 @@ What came back from the interviews: heavy reliance on several apps at once, long
 
 [[3]]
 
-![Pain points, mapped from the research](/uploads/image_018.png)
+[[4]]
 
 ## Where existing apps fall short
 
@@ -152,9 +206,9 @@ What came back from the interviews: heavy reliance on several apps at once, long
 
 I built personas across the age range the app serves, then mapped the customer journey to find where planning breaks down: the moment a traveller leaves for a second app, and the moment a long booking flow loses them.
 
-![User personas](/uploads/image_019.png)
+[[5]]
 
-![Customer journey map](/uploads/image_020.png)
+[[6]]
 
 ## How might we
 
@@ -174,21 +228,21 @@ Each pain point became a question to design against.
 
 I mapped registration and home, then the booking flow end to end. In Book Flights a user picks one-way or return, then cities, travellers and class, then dates. Search results lead to seat selection, where the seat map is visual rather than a dropdown, and then straight to payment. The confirmation screen closes the loop with the finalised details in one place.
 
-![User flow — registration and home](/uploads/image_021.png)
+[[7]]
 
-![User flow — booking](/uploads/image_022.png)
+[[8]]
 
-![Information architecture](/uploads/image_023.png)
+[[9]]
 
 ## Wireframes to high-fidelity UI
 
 I started with digital low-fidelity wireframes, which let me iterate quickly and keep the layouts honest against real screen sizes. Once the structure felt right, I built them out in Figma with tripora's colour, typography and iconography, working from a style guide so the screens stayed consistent as the set grew.
 
-![Style guide](/uploads/image_024.png)
+[[10]]
 
-![Low-fidelity wireframes](/uploads/image_025.png)
+[[11]]
 
-![The same screens, high-fidelity](/uploads/image_026.png)
+[[12]]
 
 ## Prototype and testing
 
