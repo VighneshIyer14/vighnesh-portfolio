@@ -39,6 +39,21 @@ content:
       It was my capstone project on a UI/UX bootcamp, and I owned the full cycle
       — from framing the problem space to validating a high-fidelity prototype
       with users.
+  - type: steps
+    title: How I worked
+    items:
+      - title: Research
+        text: Surveys and interviews with Indian buyers and sellers, plus a review of
+          where auction platforms are heading.
+      - title: Define
+        text: Pain points, personas, journey maps and How Might We questions for both
+          sides of the marketplace.
+      - title: Structure
+        text: User flows for registration, buyers and sellers, and one information
+          architecture to hold them.
+      - title: Design and test
+        text: Low-fidelity wireframes built into high-fidelity Figma screens, then a
+          clickable prototype tested with users.
   - type: heading
     text: Why online auctions
   - type: text
@@ -221,36 +236,31 @@ content:
   - type: heading
     text: Hypotheses going in
   - type: text
-    body: >+
-      - **Verified listings and transparency** — clear descriptions, verified
-      sellers and
+    body: >-
+      **Verified listings and transparency –** Clear descriptions, verified
+      sellers and authenticity checks will cut buyer hesitation and build
+      trust.
 
-      authenticity checks will cut buyer hesitation and build trust
 
-      - **A streamlined bidding experience** — structured timelines, bid
-      notifications and
+      **A streamlined bidding experience –** Structured timelines, bid
+      notifications and automated bidding will lower anxiety and reduce missed
+      auctions.
 
-      automated bidding will lower anxiety and reduce missed auctions
 
-      - **Stronger trust mechanisms** — seller verification, escrow payments and
+      **Stronger trust mechanisms –** Seller verification, escrow payments and
+      authenticity guarantees will answer legitimacy concerns.
 
-      authenticity guarantees will answer legitimacy concerns
 
-      - **Reliable shipping** — secure packaging, insurance and live tracking
-      will reassure
+      **Reliable shipping –** Secure packaging, insurance and live tracking
+      will reassure both sides.
 
-      both sides
 
-      - **Value awareness tools** — market insights and benchmarks will help
-      sellers show
+      **Value awareness tools –** Market insights and benchmarks will help
+      sellers show what an item is worth, and help buyers judge it.
 
-      what an item is worth and help buyers judge it
 
-      - **Flexible platform policies** — safer digital sales and broader
-      categories will
-
-      bring more sellers in
-
+      **Flexible platform policies –** Safer digital sales and broader
+      categories will bring more sellers in.
   - type: heading
     text: Personas and journeys
   - type: text
@@ -279,49 +289,40 @@ content:
   - type: heading
     text: How might we
   - type: text
-    body: >+
+    body: >-
       Each pain point became a question to design against.
 
 
-      **For buyers**
+      **Verified listings –** How might we make sure every listing is
+      verified, to build trust and prevent fraud?
 
 
-      - How might we make sure every listing is verified, to build trust and
-      prevent fraud? - How might we simplify the bidding process so buyers can
-      place and track bids in
-
-      real time without confusion?
-
-      - How might we validate sellers and products transparently, so buyers feel
-      confident? - How might we give clear shipping information and a channel to
-      the seller, so
-
-      nothing is left uncertain?
+      **Real-time bidding –** How might we simplify bidding so buyers can
+      place and track bids in real time without confusion?
 
 
-      **For sellers**
+      **Transparent validation –** How might we validate sellers and products
+      transparently, so buyers feel confident?
 
 
-      - How might we help sellers build credibility through reputation systems
-      and verified
+      **Shipping clarity –** How might we give clear shipping information and
+      a channel to the seller, so nothing is left uncertain?
 
-      profiles?
 
-      - How might we give sellers analytics and promotional tools that make
-      their auctions
+      **Seller credibility –** How might we help sellers build credibility
+      through reputation systems and verified profiles?
 
-      more visible and more successful?
 
-      - How might we streamline listing, including bulk uploads, so managing
-      many auctions
+      **Visibility –** How might we give sellers analytics and promotional
+      tools that make their auctions more visible and more successful?
 
-      is easy?
 
-      - How might we offer flexible listing templates so sellers can represent
-      products
+      **Bulk listing –** How might we streamline listing, including bulk
+      uploads, so managing many auctions is easy?
 
-      properly?
 
+      **Flexible templates –** How might we offer flexible listing templates
+      so sellers can represent products properly?
   - type: heading
     text: Flows and information architecture
   - type: text
@@ -373,13 +374,24 @@ content:
   - type: heading
     text: What's next
   - type: text
-    body: >+
-      - Recommendations driven by bidding history, preferences and past
-      purchases - Real-time bid tracking with alerts for price changes and
-      competing bids - Verification badges for sellers and products - Wider
-      seller tools: bulk upload, analytics dashboards and promotion - An offline
-      mode for managing auctions and tracking bids on the move
+    body: >-
+      **Smarter recommendations –** Suggestions driven by bidding history,
+      preferences and past purchases.
 
+
+      **Live bid tracking –** Real-time alerts for price changes and competing
+      bids.
+
+
+      **Verification badges –** Visible badges for verified sellers and
+      products.
+
+
+      **Wider seller tools –** Bulk upload, analytics dashboards and
+      promotion.
+
+
+      **Offline mode –** Manage auctions and track bids on the move.
   - type: heading
     text: What I learned
   - type: text
