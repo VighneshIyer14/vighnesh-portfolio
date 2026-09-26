@@ -78,7 +78,7 @@ content:
               - name: image
                 label: Image with caption
                 fields:
-                  - { name: image, label: Image, type: image, required: true, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
+                  - { name: image, label: Image, type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
                   - { name: caption, label: Caption, type: string }
                   - { name: alt, label: "Alt text (describe the image for screen readers)", type: string }
                   - { name: transparent, label: "Transparent image (PNG/SVG with no background — drops the frame)", type: boolean, default: false }
