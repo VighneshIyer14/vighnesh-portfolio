@@ -1,11 +1,9 @@
 ---
 title: TradeRake
-summary: >-
-  A stock-market intelligence platform — a brand website that launched, and a
-  trading product 90% designed before the company shut down.
+summary: A stock-market intelligence platform — a brand website that launched,
+  and a trading product 90% designed before the company shut down.
 discipline: UI/UX Design
 category: Fintech
-year: ''
 role: UI/UX Designer, Baron Tech Labs
 tools:
   - Figma
@@ -22,25 +20,21 @@ draft: false
 content:
   - type: callout
     label: The goal
-    body: >
-      Turn complex market data into a clear, confident experience — so that
+    body: Turn complex market data into a clear, confident experience — so that
       investing and trading feel smarter and faster, without needing five tools
       to do it.
   - type: steps
     title: Two phases
     items:
       - title: Phase 1 — Brand website
-        text: >-
-          Designed and developed — Home, Markets, Blogs and Tools pages,
-          CMS-driven. Launched, then taken offline when the company closed.
+        text: Designed and developed — Home, Markets, Blogs and Tools pages, CMS-driven.
+          Launched, then taken offline when the company closed.
       - title: Phase 2 — The product
-        text: >-
-          About 90% designed — Markets, authentication, profile, settings and
-          the post-login home.
+        text: About 90% designed — Markets, authentication, profile, settings and the
+          post-login home.
       - title: Shut down
-        text: >-
-          The company closed abruptly over funding. Phase 2 never shipped, and
-          the site is now just a branding page.
+        text: The company closed abruptly over funding. Phase 2 never shipped, and the
+          site is now just a branding page.
   - type: image
     image: /uploads/traderake-home.jpg
     caption: Home page
@@ -60,7 +54,7 @@ content:
     transparent: false
     size: Full width
   - type: image
-    image: /uploads/traderake-tools.jpg
+    image: /uploads/image_030.png
     caption: Tools page
     alt: TradeRake tools page with category tabs, search and calculator cards
     transparent: false
