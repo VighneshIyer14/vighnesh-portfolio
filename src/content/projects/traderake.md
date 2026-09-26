@@ -40,13 +40,13 @@ content:
     caption: Home page
     alt: TradeRake home page, from hero to footer
     transparent: false
-    size: Content width
+    size: Full width
   - type: image
     image: /uploads/image_028.png
     caption: Markets page — one row per asset class
     alt: TradeRake markets page with a row for each asset class
     transparent: false
-    size: Content width
+    size: Full width
   - type: image
     image: /uploads/image_029.png
     caption: Blogs page
