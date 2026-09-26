@@ -1,8 +1,8 @@
 ---
 title: TradeRake
 summary: >-
-  A stock-market intelligence platform — from a shipped marketing site to market
-  discovery, order placement and live portfolio tracking.
+  A stock-market intelligence platform — a brand website that launched, and a
+  trading product 90% designed before the company shut down.
 discipline: UI/UX Design
 category: Fintech
 year: ''
@@ -31,14 +31,16 @@ content:
     items:
       - title: Phase 1 — Brand website
         text: >-
-          Designed and developed. Home, Markets, Blogs and Tools pages, live and
-          CMS-driven.
+          Designed and developed — Home, Markets, Blogs and Tools pages,
+          CMS-driven. Launched, then taken offline when the company closed.
       - title: Phase 2 — The product
         text: >-
           About 90% designed — Markets, authentication, profile, settings and
           the post-login home.
-      - title: Paused
-        text: The company shut down abruptly over funding before Phase 2 could ship.
+      - title: Shut down
+        text: >-
+          The company closed abruptly over funding. Phase 2 never shipped, and
+          the site is now just a branding page.
   - type: image
     image: ''
     caption: Hero — value proposition with a live app preview
@@ -82,7 +84,7 @@ Active traders have the same problem at a faster pace: data scattered across too
 
 **TradeRake is a stock-market intelligence platform built to fix that** — one place where investors get real-time market intelligence, traders get actionable insight, and everyone gets a clear, transparent view of the market.
 
-I designed it as a live project at Baron Tech Labs: the brand and marketing website first, then the product behind it.
+I designed it at Baron Tech Labs: the brand and marketing website first, then the product behind it. The company closed abruptly, and the site is now reduced to a single branding page — so the screens in this case study come from screenshots I saved while it was up.
 
 [[1]]
 
@@ -156,6 +158,6 @@ Both libraries were designed to grow, so they share one pattern: category tabs a
 
 **Structure is what makes dense data readable –** One repeated pattern with a distinct accent per market let six very different asset classes sit on one page without blurring together.
 
-**Build for the people who keep the site alive –** Making blogs and tools CMS-driven meant the site could keep growing after the design work was done.
+**Build for the team, not just the launch –** Making blogs and tools CMS-driven meant the team could keep the site growing without waiting on design or development.
 
-**Projects can end without warning –** Phase 2 was 90% designed when the company closed. Documenting as I went is the reason this work can still be shown.
+**Projects can end without warning –** Phase 2 was 90% designed when the company closed, and the site went down with it. Saving screenshots and documenting as I went is the only reason this work can still be shown.
