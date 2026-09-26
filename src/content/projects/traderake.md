@@ -36,19 +36,19 @@ content:
         text: The company closed abruptly over funding. Phase 2 never shipped, and the
           site is now just a branding page.
   - type: image
-    image: /uploads/traderake-home.jpg
+    image: /uploads/image_027.png
     caption: Home page
     alt: TradeRake home page, from hero to footer
     transparent: false
     size: Content width
   - type: image
-    image: /uploads/traderake-markets.jpg
+    image: /uploads/image_028.png
     caption: Markets page — one row per asset class
     alt: TradeRake markets page with a row for each asset class
     transparent: false
     size: Content width
   - type: image
-    image: /uploads/traderake-blogs.jpg
+    image: /uploads/image_029.png
     caption: Blogs page
     alt: TradeRake blogs page with category tabs, search and article cards
     transparent: false
