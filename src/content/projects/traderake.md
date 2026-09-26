@@ -15,7 +15,7 @@ tags:
   - Web app
   - Fintech
   - Design system
-cover: /uploads/traderake-cover.svg
+cover: /uploads/traderake-cover.jpg
 featured: true
 order: 1
 draft: false
@@ -42,25 +42,25 @@ content:
           The company closed abruptly over funding. Phase 2 never shipped, and
           the site is now just a branding page.
   - type: image
-    image: ''
+    image: /uploads/traderake-home.jpg
     caption: Home page
     alt: TradeRake home page, from hero to footer
     transparent: false
-    size: Full width
+    size: Content width
   - type: image
-    image: ''
+    image: /uploads/traderake-markets.jpg
     caption: Markets page — one row per asset class
     alt: TradeRake markets page with a row for each asset class
     transparent: false
-    size: Full width
+    size: Content width
   - type: image
-    image: ''
+    image: /uploads/traderake-blogs.jpg
     caption: Blogs page
     alt: TradeRake blogs page with category tabs, search and article cards
     transparent: false
     size: Full width
   - type: image
-    image: ''
+    image: /uploads/traderake-tools.jpg
     caption: Tools page
     alt: TradeRake tools page with category tabs, search and calculator cards
     transparent: false

@@ -43,7 +43,7 @@ content:
           - { name: role, label: Your role, type: string }
           - { name: tools, label: Tools, type: string, list: true }
           - { name: tags, label: Tags (first 3 shown on the card), type: string, list: true }
-          - { name: cover, label: "Cover image (16:10, e.g. 1600×1000)", type: image, required: true, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+          - { name: cover, label: "Cover image (16:10, e.g. 1600×1000)", type: image, required: true, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
           - name: gallery
             label: Gallery
             type: object
@@ -51,7 +51,7 @@ content:
               collapsible:
                 summary: "{index}. {caption}"
             fields:
-              - { name: image, label: Image, type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+              - { name: image, label: Image, type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
               - { name: caption, label: Caption, type: string }
           - { name: link, label: Live site / prototype link, type: string }
           - { name: featured, label: Featured (big glowing card on Home), type: boolean, default: false }
@@ -78,7 +78,7 @@ content:
               - name: image
                 label: Image with caption
                 fields:
-                  - { name: image, label: Image, type: image, required: true, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+                  - { name: image, label: Image, type: image, required: true, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
                   - { name: caption, label: Caption, type: string }
                   - { name: alt, label: "Alt text (describe the image for screen readers)", type: string }
                   - { name: transparent, label: "Transparent image (PNG/SVG with no background — drops the frame)", type: boolean, default: false }
@@ -91,9 +91,9 @@ content:
               - name: image-pair
                 label: Two images side by side
                 fields:
-                  - { name: left, label: Left image, type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+                  - { name: left, label: Left image, type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
                   - { name: leftCaption, label: Left caption, type: string }
-                  - { name: right, label: Right image, type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+                  - { name: right, label: Right image, type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
                   - { name: rightCaption, label: Right caption, type: string }
               - name: gallery
                 label: Gallery (grid of images)
@@ -106,7 +106,7 @@ content:
                       values: ["2", "3"]
                   - name: bulk
                     label: "Add several images at once (select many in one go — no captions)"
-                    description: "Max 5 MB each · PNG, JPG, WebP or SVG. Shown after any captioned images below."
+                    description: "Keep each under 3 MB — bigger uploads fail with error 413. Shown after any captioned images below."
                     type: image
                     options:
                       multiple: true
@@ -115,7 +115,7 @@ content:
                     type: object
                     list: true
                     fields:
-                      - { name: image, label: Image, type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+                      - { name: image, label: Image, type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
                       - { name: caption, label: Caption, type: string }
               - name: quote
                 label: Quote (user feedback, insight)
@@ -197,7 +197,7 @@ content:
       - { name: currentCompany, label: "Current company — shown as “Currently working at … as …” when Open to work is OFF", type: string }
       - { name: currentCompanyUrl, label: "Current company website (optional)", type: string }
       - { name: headline, label: "Headline (wrap words in *stars* to make them neon)", type: string }
-      - { name: heroImage, label: "Home hero image (replaces the drawn shapes beside the headline — leave empty for the shapes)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+      - { name: heroImage, label: "Home hero image (replaces the drawn shapes beside the headline — leave empty for the shapes)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
       - { name: intro, label: "Intro (blank line = new paragraph, *stars* = cyan)", type: text }
       - name: introHighlight
         label: Highlight line (shown in cyan under the intro, above “View work”)
@@ -205,7 +205,7 @@ content:
         type: string
       - { name: tagline, label: Footer tagline, type: text }
       - { name: cv, label: CV (PDF), type: file }
-      - { name: shareImage, label: "Link preview image (shown when you share the site on LinkedIn/WhatsApp — 1200×630)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+      - { name: shareImage, label: "Link preview image (shown when you share the site on LinkedIn/WhatsApp — 1200×630)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
       - { name: email, label: Email, type: string }
       - { name: phone, label: Phone, type: string }
       - { name: whatsapp, label: "WhatsApp number (digits with country code, e.g. 919591770958)", type: string }
@@ -251,7 +251,7 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
-          - { name: image, label: "Image (optional, 16:10)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+          - { name: image, label: "Image (optional, 16:10)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
           - { name: tools, label: Tools, type: string, list: true }
 
   # ---------------------------------------------------------------- About
@@ -263,7 +263,7 @@ content:
     fields:
       - { name: title, label: "Title (*stars* = neon)", type: string }
       - { name: intro, label: Intro, type: text }
-      - { name: photo, label: "Photo of you (optional, shown under the intro)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+      - { name: photo, label: "Photo of you (optional, shown under the intro)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
       - { name: photoCaption, label: Photo caption, type: string }
       - { name: quote, label: Philosophy quote, type: text }
       - { name: principles, label: Principles, type: string, list: true }
@@ -278,7 +278,7 @@ content:
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
           - { name: tags, label: Tags, type: string, list: true }
-          - { name: image, label: "Image (optional)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+          - { name: image, label: "Image (optional)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
       - name: why
         label: Why VFX makes better UX
         type: object
@@ -345,7 +345,7 @@ content:
         fields:
           - { name: title, label: Job title, type: string }
           - { name: org, label: Company, type: string }
-          - { name: logo, label: "Company logo (optional, square)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+          - { name: logo, label: "Company logo (optional, square)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
           - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
           - { name: end, label: End date, type: date }
           - { name: current, label: "I still work here (shows “Present” instead of the end date)", type: boolean, default: false }
@@ -381,7 +381,7 @@ content:
         fields:
           - { name: title, label: Qualification, type: string }
           - { name: org, label: Institution, type: string }
-          - { name: logo, label: "Institution logo (optional, square)", type: image, description: "Max 5 MB · PNG, JPG, WebP or SVG. Big images are compressed automatically when the site publishes." }
+          - { name: logo, label: "Institution logo (optional, square)", type: image, description: "Keep under 3 MB — bigger uploads fail here with error 413. PNG, JPG, WebP or SVG; big images are compressed automatically when the site publishes." }
           - { name: start, label: Start date, description: "Pick any day in the month — the site only shows month and year.", type: date }
           - { name: end, label: End date, type: date }
           - { name: current, label: "Still studying here (shows “Present” instead of the end date)", type: boolean, default: false }
