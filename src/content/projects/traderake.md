@@ -43,38 +43,28 @@ content:
           the site is now just a branding page.
   - type: image
     image: ''
-    caption: Hero — value proposition with a live app preview
-    alt: TradeRake home page hero with portfolio value and watchlist preview
-    transparent: false
-    size: Full width
-  - type: image
-    image: ''
-    caption: Asset classes, tools and blog on the home page
-    alt: Home page sections for markets, calculators and blog
-    transparent: false
-    size: Full width
-  - type: image
-    image: ''
-    caption: Trust pillars, dashboard teaser, testimonials and the early-access CTA
-    alt: Lower half of the TradeRake home page
+    caption: Home page
+    alt: TradeRake home page, from hero to footer
     transparent: false
     size: Full width
   - type: image
     image: ''
     caption: Markets page — one row per asset class
-    alt: TradeRake markets page layout
+    alt: TradeRake markets page with a row for each asset class
     transparent: false
     size: Full width
-  - type: image-pair
-    left: ''
-    leftCaption: Equity and mutual fund rows
-    right: ''
-    rightCaption: Commodities and forex rows
-  - type: image-pair
-    left: ''
-    leftCaption: Blogs page
-    right: ''
-    rightCaption: Tools page
+  - type: image
+    image: ''
+    caption: Blogs page
+    alt: TradeRake blogs page with category tabs, search and article cards
+    transparent: false
+    size: Full width
+  - type: image
+    image: ''
+    caption: Tools page
+    alt: TradeRake tools page with category tabs, search and calculator cards
+    transparent: false
+    size: Full width
 ---
 ## Overview
 
@@ -84,7 +74,7 @@ Active traders have the same problem at a faster pace: data scattered across too
 
 **TradeRake is a stock-market intelligence platform built to fix that** — one place where investors get real-time market intelligence, traders get actionable insight, and everyone gets a clear, transparent view of the market.
 
-I designed it at Baron Tech Labs: the brand and marketing website first, then the product behind it. The company closed abruptly, and the site is now reduced to a single branding page — so the screens in this case study come from screenshots I saved while it was up.
+I designed it at Baron Tech Labs: the brand and marketing website first, then the product behind it. The company closed abruptly, and the site is now reduced to a single branding page — so the screens in this case study come from screenshots I saved while it was up. The site also had About us and Contact us pages, but it went down before I could capture them, so they are not shown here.
 
 [[1]]
 
@@ -108,8 +98,6 @@ The home page had one job: explain what TradeRake is, prove it covers the whole 
 
 **Blog –** Articles on trading psychology, market basics and strategy, positioning TradeRake as somewhere to learn, not only a data tool.
 
-[[4]]
-
 **About TradeRake –** Four trust pillars — NSE and BSE integration, global markets, live news and smart trade calls — that separate it from a generic tracker.
 
 **A glimpse of the future –** A teaser dashboard that previews the in-app experience and builds anticipation for early access.
@@ -118,13 +106,11 @@ The home page had one job: explain what TradeRake is, prove it covers the whole 
 
 **Get early access –** The page closes on a clear, low-commitment action that fits a pre-launch product.
 
-[[5]]
-
 ## Markets page
 
 Six asset classes behave very differently and attract different people, so each one gets its own row, with alternating text and mockup placement and a distinct accent colour. The rhythm keeps the page scannable; the colour tells the markets apart.
 
-[[6]]
+[[4]]
 
 **Global equity markets –** Real-time analytics and stock screeners, with a portfolio-growth mockup that shows data depth for serious traders.
 
@@ -138,19 +124,19 @@ Six asset classes behave very differently and attract different people, so each 
 
 **Timeless value (metals) –** Digital gold, silver and sovereign gold bonds as a low-hassle way to hold precious metals.
 
-[[7]]
-
 ## Blogs and tools
 
 Both libraries were designed to grow, so they share one pattern: category tabs and search to jump straight to what you need, and a consistent card that makes a long list easy to scan.
 
 **Blogs –** Tabs for All, Stock, Wealth and Finance. Each card carries a category tag, date, title and "Read article". The mix — psychology, beginner basics, market fundamentals — supports readers at every stage of their investing journey.
 
+[[5]]
+
 **Tools –** Tabs for Investment, Trading and Personal Finance. Each card has a category tag, icon, name and a one-line description, so a wide range of calculators can be compared at a glance.
 
-**CMS-driven –** Articles and calculators are both managed through a CMS, so the team could publish a new article or add a new tool without design or development support.
+[[6]]
 
-[[8]]
+**CMS-driven –** Articles and calculators are both managed through a CMS, so the team could publish a new article or add a new tool without design or development support.
 
 ## What I learned
 
