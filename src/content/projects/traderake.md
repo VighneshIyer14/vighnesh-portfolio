@@ -48,13 +48,13 @@ content:
     transparent: false
     size: Full width
   - type: image
-    image: /uploads/image_029.png
+    image: /uploads/image_030.png
     caption: Blogs page
     alt: TradeRake blogs page with category tabs, search and article cards
     transparent: false
     size: Full width
   - type: image
-    image: /uploads/image_030.png
+    image: /uploads/image_029.png
     caption: Tools page
     alt: TradeRake tools page with category tabs, search and calculator cards
     transparent: false
