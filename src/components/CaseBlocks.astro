@@ -126,8 +126,8 @@ function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
   /* Images & media break out of the 760px text column to the full container */
   .blk-fig { margin: var(--space-8) 0; }
   .blk-fig.is-wide, .blk-pair, .blk-gallery, .blk-results { max-width: none !important; }
-  /* "Content width" images sit centred at text-column width — good for tall full-page screenshots */
-  .blk-fig.is-narrow { max-width: var(--prose-max) !important; margin-inline: auto; }
+  /* "Content width" images are narrower (good for tall full-page screenshots) and start where the text starts */
+  .blk-fig.is-narrow { max-width: var(--prose-max) !important; margin-inline: 0; }
   .blk-fig img, .blk-fig video { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-sunken); display: block; }
   /* Transparent PNG / SVG: no frame, no fill — it sits straight on the page */
   .blk-fig.is-bare img { border: 0; background: none; border-radius: 0; }
