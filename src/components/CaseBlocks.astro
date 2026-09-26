@@ -7,7 +7,11 @@ interface Props { blocks: Block[] }
 const { blocks } = Astro.props;
 
 const md = (s?: string) => (s ? (marked.parse(String(s), { async: false }) as string) : '');
-const imgs = (b: Block) => (Array.isArray(b.images) ? b.images : []).filter((i: any) => i && i.image);
+const imgs = (b: Block) => [
+  ...(Array.isArray(b.images) ? b.images : []),
+  // "Add several images at once" — a plain list of paths (a single pick may be saved as one string)
+  ...[b.bulk].flat().filter(Boolean).map((image: string) => ({ image })),
+].filter((i: any) => i && i.image);
 
 /** YouTube / Vimeo link → embeddable URL; anything else is treated as a video file. */
 function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
@@ -122,6 +126,8 @@ function embed(url: string): { kind: 'iframe' | 'video'; src: string } | null {
   /* Images & media break out of the 760px text column to the full container */
   .blk-fig { margin: var(--space-8) 0; }
   .blk-fig.is-wide, .blk-pair, .blk-gallery, .blk-results { max-width: none !important; }
+  /* "Content width" images sit centred at text-column width — good for tall full-page screenshots */
+  .blk-fig.is-narrow { max-width: var(--prose-max) !important; margin-inline: auto; }
   .blk-fig img, .blk-fig video { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-sunken); display: block; }
   /* Transparent PNG / SVG: no frame, no fill — it sits straight on the page */
   .blk-fig.is-bare img { border: 0; background: none; border-radius: 0; }
